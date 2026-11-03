@@ -1,0 +1,286 @@
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local HttpService = game:GetService("HttpService")
+
+local LocalPlayer = Players.LocalPlayer
+local Mouse = LocalPlayer:GetMouse()
+local Camera = workspace.CurrentCamera
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "SuperRingPartsGUI"
+ScreenGui.ResetOnSpawn = false
+ScreenGui.Parent = LocalPlayer:WaitForChild("PlayerGui")
+
+local MainFrame = Instance.new("Frame")
+MainFrame.Size = UDim2.new(0, 290, 0, 440)
+MainFrame.Position = UDim2.new(0.5, -145, 0.5, -220)
+MainFrame.BackgroundColor3 = Color3.fromRGB(24, 24, 32)
+MainFrame.BorderSizePixel = 0
+MainFrame.Parent = ScreenGui
+
+local UICorner = Instance.new("UICorner")
+UICorner.CornerRadius = UDim.new(0, 12)
+UICorner.Parent = MainFrame
+
+local UIStroke = Instance.new("UIStroke")
+UIStroke.Color = Color3.fromRGB(0, 204, 204)
+UIStroke.Transparency = 0.5
+UIStroke.Thickness = 1.5
+UIStroke.Parent = MainFrame
+
+local Title = Instance.new("TextLabel")
+Title.Size = UDim2.new(1, -64, 0, 32)
+Title.Position = UDim2.new(0, 4, 0, 4)
+Title.Text = "Super Rings V1.5"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundColor3 = Color3.fromRGB(0, 204, 204)
+Title.Font = Enum.Font.GothamBold
+Title.TextSize = 13
+Title.Parent = MainFrame
+
+local TitleCorner = Instance.new("UICorner")
+TitleCorner.CornerRadius = UDim.new(0, 8)
+TitleCorner.Parent = Title
+
+local MinimizeButton = Instance.new("TextButton")
+MinimizeButton.Size = UDim2.new(0, 26, 0, 26)
+MinimizeButton.Position = UDim2.new(1, -58, 0, 7)
+MinimizeButton.Text = "-"
+MinimizeButton.BackgroundColor3 = Color3.fromRGB(255, 200, 50)
+MinimizeButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+MinimizeButton.Font = Enum.Font.GothamBold
+MinimizeButton.TextSize = 16
+MinimizeButton.Parent = MainFrame
+
+local MinimizeCorner = Instance.new("UICorner")
+MinimizeCorner.CornerRadius = UDim.new(1, 0)
+MinimizeCorner.Parent = MinimizeButton
+
+local CloseButton = Instance.new("TextButton")
+CloseButton.Size = UDim2.new(0, 26, 0, 26)
+CloseButton.Position = UDim2.new(1, -29, 0, 7)
+CloseButton.Text = "X"
+CloseButton.BackgroundColor3 = Color3.fromRGB(255, 60, 60)
+CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CloseButton.Font = Enum.Font.GothamBold
+CloseButton.TextSize = 14
+CloseButton.Parent = MainFrame
+
+local CloseCorner = Instance.new("UICorner")
+CloseCorner.CornerRadius = UDim.new(1, 0)
+CloseCorner.Parent = CloseButton
+
+local ContentFrame = Instance.new("Frame")
+ContentFrame.Size = UDim2.new(1, -16, 1, -44)
+ContentFrame.Position = UDim2.new(0, 8, 0, 38)
+ContentFrame.BackgroundTransparency = 1
+ContentFrame.Parent = MainFrame
+
+local config = {
+    enabled = false,
+    radius = 50,
+    height = 10,
+    rotationSpeed = 10,
+    attractionStrength = 1000,
+    targetMode = "player",
+    followMouse = false,
+    superSpin = false,
+    targetPlayer = nil,
+    targetPart = nil,
+    orbitPattern = "circle",
+    spiralGrowth = 0.1,
+    ellipseRatio = 0.6,
+    figure8Scale = 0.5,
+    starPoints = 5,
+    starInnerRadius = 0.5,
+    color = Color3.fromRGB(0, 255, 255)
+}
+
+local function saveConfig()
+    pcall(function()
+        writefile("SuperRingPartsConfig.txt", HttpService:JSONEncode(config))
+    end)
+end
+
+local trackedParts = {}
+
+CloseButton.MouseButton1Click:Connect(function()
+    config.enabled = false
+    
+    for part, _ in pairs(trackedParts) do
+        if part and part.Parent and not part.Anchored then
+            pcall(function()
+                part.Velocity = Vector3.new(0, 0, 0)
+                part.RotVelocity = Vector3.new(0, 0, 0)
+            end)
+        end
+    end
+    
+    ScreenGui:Destroy()
+end)
+
+local orbitPatterns = {
+    circle = "Circle",
+    ellipse = "Ellipse",
+    figure8 = "Figure 8",
+    spiral = "Spiral",
+    helix = "Helix",
+    wave = "Wave",
+    star = "Star",
+    flower = "Flower",
+    infinity = "Infinity",
+    blackhole = "Blackhole",
+    still = "Still",
+    random = "Random"
+}
+
+local RingToggleButton = Instance.new("TextButton")
+RingToggleButton.Size = UDim2.new(0, 52, 0, 34)
+RingToggleButton.Position = UDim2.new(0, 0, 0, 0)
+RingToggleButton.Text = config.enabled and "ON" or "OFF"
+RingToggleButton.BackgroundColor3 = config.enabled and Color3.fromRGB(50, 200, 100) or Color3.fromRGB(220, 60, 60)
+RingToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+RingToggleButton.Font = Enum.Font.GothamBold
+RingToggleButton.TextSize = 11
+RingToggleButton.Parent = ContentFrame
+
+local RingToggleCorner = Instance.new("UICorner")
+RingToggleCorner.CornerRadius = UDim.new(0, 8)
+RingToggleCorner.Parent = RingToggleButton
+
+RingToggleButton.MouseButton1Click:Connect(function()
+    config.enabled = not config.enabled
+    RingToggleButton.Text = config.enabled and "ON" or "OFF"
+    RingToggleButton.BackgroundColor3 = config.enabled and Color3.fromRGB(50, 200, 100) or Color3.fromRGB(220, 60, 60)
+    saveConfig()
+end)
+
+local FollowMouseBtn = Instance.new("TextButton")
+FollowMouseBtn.Size = UDim2.new(0, 114, 0, 34)
+FollowMouseBtn.Position = UDim2.new(0, 58, 0, 0)
+FollowMouseBtn.Text = config.followMouse and "Mouse: ON" or "Mouse: OFF"
+FollowMouseBtn.BackgroundColor3 = config.followMouse and Color3.fromRGB(0, 150, 200) or Color3.fromRGB(45, 45, 55)
+FollowMouseBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+FollowMouseBtn.Font = Enum.Font.GothamBold
+FollowMouseBtn.TextSize = 10
+FollowMouseBtn.Parent = ContentFrame
+
+local FollowMouseCorner = Instance.new("UICorner")
+FollowMouseCorner.CornerRadius = UDim.new(0, 8)
+FollowMouseCorner.Parent = FollowMouseBtn
+
+FollowMouseBtn.MouseButton1Click:Connect(function()
+    config.followMouse = not config.followMouse
+    FollowMouseBtn.Text = config.followMouse and "Mouse: ON" or "Mouse: OFF"
+    FollowMouseBtn.BackgroundColor3 = config.followMouse and Color3.fromRGB(0, 150, 200) or Color3.fromRGB(45, 45, 55)
+    saveConfig()
+end)
+
+local ColorButton = Instance.new("TextButton")
+ColorButton.Size = UDim2.new(0, 92, 0, 34)
+ColorButton.Position = UDim2.new(1, -92, 0, 0)
+ColorButton.Text = "Color"
+ColorButton.BackgroundColor3 = config.color
+ColorButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+ColorButton.Font = Enum.Font.GothamBold
+ColorButton.TextSize = 11
+ColorButton.Parent = ContentFrame
+
+local ColorButtonCorner = Instance.new("UICorner")
+ColorButtonCorner.CornerRadius = UDim.new(0, 8)
+ColorButtonCorner.Parent = ColorButton
+
+ColorButton.MouseButton1Click:Connect(function()
+    local colors = {
+        Color3.fromRGB(0, 255, 255), Color3.fromRGB(255, 0, 255),
+        Color3.fromRGB(255, 255, 0), Color3.fromRGB(0, 255, 0),
+        Color3.fromRGB(255, 0, 0), Color3.fromRGB(0, 128, 255),
+        Color3.fromRGB(255, 128, 0), Color3.fromRGB(150, 0, 255)
+    }
+    local currentIndex = 1
+    for i, color in ipairs(colors) do
+        if math.abs(color.R - config.color.R) < 0.01 then currentIndex = i break end
+    end
+    config.color = colors[(currentIndex % #colors) + 1]
+    ColorButton.BackgroundColor3 = config.color
+    saveConfig()
+end)
+
+local SuperSpinBtn = Instance.new("TextButton")
+SuperSpinBtn.Size = UDim2.new(1, 0, 0, 30)
+SuperSpinBtn.Position = UDim2.new(0, 0, 0, 42)
+SuperSpinBtn.Text = config.superSpin and "Super Spin: ON" or "Super Spin: OFF"
+SuperSpinBtn.BackgroundColor3 = config.superSpin and Color3.fromRGB(255, 128, 0) or Color3.fromRGB(45, 45, 55)
+SuperSpinBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+SuperSpinBtn.Font = Enum.Font.GothamBold
+SuperSpinBtn.TextSize = 11
+SuperSpinBtn.Parent = ContentFrame
+
+local SuperSpinCorner = Instance.new("UICorner")
+SuperSpinCorner.CornerRadius = UDim.new(0, 8)
+SuperSpinCorner.Parent = SuperSpinBtn
+
+SuperSpinBtn.MouseButton1Click:Connect(function()
+    config.superSpin = not config.superSpin
+    SuperSpinBtn.Text = config.superSpin and "Super Spin: O" or "Super Spin: OFF"
+    SuperSpinBtn.BackgroundColor3 = config.superSpin and Color3.fromRGB(255, 128, 0) or Color3.fromRGB(45, 45, 55)
+    saveConfig()
+end)
+
+local PatternLabel = Instance.new("TextLabel")
+PatternLabel.Size = UDim2.new(0, 130, 0, 20)
+PatternLabel.Position = UDim2.new(0, 0, 0, 80)
+PatternLabel.Text = "Orbit Pattern:"
+PatternLabel.TextColor3 = Color3.fromRGB(180, 180, 190)
+PatternLabel.BackgroundTransparency = 1
+PatternLabel.Font = Enum.Font.Gotham
+PatternLabel.TextSize = 11
+PatternLabel.TextXAlignment = Enum.TextXAlignment.Left
+PatternLabel.Parent = ContentFrame
+
+local PatternDropdown = Instance.new("TextButton")
+PatternDropdown.Size = UDim2.new(1, 0, 0, 30)
+PatternDropdown.Position = UDim2.new(0, 0, 0, 102)
+PatternDropdown.Text = orbitPatterns[config.orbitPattern]
+PatternDropdown.BackgroundColor3 = Color3.fromRGB(35, 35, 45)
+PatternDropdown.TextColor3 = Color3.fromRGB(255, 255, 255)
+PatternDropdown.Font = Enum.Font.Gotham
+PatternDropdown.TextSize = 11
+PatternDropdown.ZIndex = 10
+PatternDropdown.Parent = ContentFrame
+
+local PatternDropdownCorner = Instance.new("UICorner")
+PatternDropdownCorner.CornerRadius = UDim.new(0, 8)
+PatternDropdownCorner.Parent = PatternDropdown
+
+local PatternList = Instance.new("ScrollingFrame")
+PatternList.Size = UDim2.new(1, 0, 0, 140)
+PatternList.Position = UDim2.new(0, 0, 0, 136)
+PatternList.BackgroundColor3 = Color3.fromRGB(35, 35, 45)
+PatternList.BorderSizePixel = 0
+PatternList.Visible = false
+PatternList.ScrollBarThickness = 4
+PatternList.ZIndex = 10
+PatternList.Parent = ContentFrame
+
+local PatternListCorner = Instance.new("UICorner")
+PatternListCorner.CornerRadius = UDim.new(0, 8)
+PatternListCorner.Parent = PatternList
+
+local patternY = 0
+for patternKey, patternName in pairs(orbitPatterns) do
+    local PatternOption = Instance.new("TextButton")
+    PatternOption.Size = UDim2.new(1, -6, 0, 24)
+    PatternOption.Position = UDim2.new(0, 3, 0, patternY)
+    PatternOption.Text = patternName
+    PatternOption.BackgroundColor3 = Color3.fromRGB(45, 45, 55)
+    PatternOption.TextColor3 = Color3.fromRGB(255, 255, 255)
+    PatternOption.Font = Enum.Font.Gotham
+    PatternOption.TextSize = 11
+    PatternOption.ZIndex = 10
+    PatternOption.Parent = PatternList
+    
+    local PatternOptionCorner = Instance.new("UICorner")
+    PatternOptionCorner.CornerRadius = UDim.new(0, 6)
+    PatternOptionCorner.Parent =
