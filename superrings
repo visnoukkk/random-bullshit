@@ -32,7 +32,7 @@ UIStroke.Parent = MainFrame
 local Title = Instance.new("TextLabel")
 Title.Size = UDim2.new(1, -64, 0, 32)
 Title.Position = UDim2.new(0, 4, 0, 4)
-Title.Text = "Super Rings V1.5"
+Title.Text = "Super Rings V1.5 by visnoukkk"
 Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title.BackgroundColor3 = Color3.fromRGB(0, 204, 204)
 Title.Font = Enum.Font.GothamBold
@@ -210,7 +210,7 @@ end)
 local SuperSpinBtn = Instance.new("TextButton")
 SuperSpinBtn.Size = UDim2.new(1, 0, 0, 30)
 SuperSpinBtn.Position = UDim2.new(0, 0, 0, 42)
-SuperSpinBtn.Text = config.superSpin and "Super Spin: ON" or "Super Spin: OFF"
+SuperSpinBtn.Text = config.superSpin and "Super Spin: ON 🔥" or "Super Spin: OFF"
 SuperSpinBtn.BackgroundColor3 = config.superSpin and Color3.fromRGB(255, 128, 0) or Color3.fromRGB(45, 45, 55)
 SuperSpinBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 SuperSpinBtn.Font = Enum.Font.GothamBold
@@ -223,7 +223,7 @@ SuperSpinCorner.Parent = SuperSpinBtn
 
 SuperSpinBtn.MouseButton1Click:Connect(function()
     config.superSpin = not config.superSpin
-    SuperSpinBtn.Text = config.superSpin and "Super Spin: O" or "Super Spin: OFF"
+    SuperSpinBtn.Text = config.superSpin and "Super Spin: ON 🔥" or "Super Spin: OFF"
     SuperSpinBtn.BackgroundColor3 = config.superSpin and Color3.fromRGB(255, 128, 0) or Color3.fromRGB(45, 45, 55)
     saveConfig()
 end)
@@ -283,4 +283,265 @@ for patternKey, patternName in pairs(orbitPatterns) do
     
     local PatternOptionCorner = Instance.new("UICorner")
     PatternOptionCorner.CornerRadius = UDim.new(0, 6)
-    PatternOptionCorner.Parent =
+    PatternOptionCorner.Parent = PatternOption
+    
+    PatternOption.MouseButton1Click:Connect(function()
+        config.orbitPattern = patternKey
+        PatternDropdown.Text = patternName
+        PatternList.Visible = false
+        saveConfig()
+    end)
+    
+    patternY = patternY + 26
+end
+PatternList.CanvasSize = UDim2.new(0, 0, 0, patternY)
+
+PatternDropdown.MouseButton1Click:Connect(function()
+    PatternList.Visible = not PatternList.Visible
+end)
+
+local RadiusLabel = Instance.new("TextLabel")
+RadiusLabel.Size = UDim2.new(1, 0, 0, 20)
+RadiusLabel.Position = UDim2.new(0, 0, 0, 142)
+RadiusLabel.Text = "Radius: " .. tostring(config.radius)
+RadiusLabel.TextColor3 = Color3.fromRGB(180, 180, 190)
+RadiusLabel.BackgroundTransparency = 1
+RadiusLabel.Font = Enum.Font.Gotham
+RadiusLabel.TextSize = 11
+RadiusLabel.TextXAlignment = Enum.TextXAlignment.Left
+RadiusLabel.Parent = ContentFrame
+
+local SliderBar = Instance.new("Frame")
+SliderBar.Size = UDim2.new(1, 0, 0, 10)
+SliderBar.Position = UDim2.new(0, 0, 0, 168)
+SliderBar.BackgroundColor3 = Color3.fromRGB(35, 35, 45)
+SliderBar.BorderSizePixel = 0
+SliderBar.Parent = ContentFrame
+
+local SliderBarCorner = Instance.new("UICorner")
+SliderBarCorner.CornerRadius = UDim.new(1, 0)
+SliderBarCorner.Parent = SliderBar
+
+local SliderFill = Instance.new("Frame")
+SliderFill.Size = UDim2.new(math.clamp(config.radius / 200, 0, 1), 0, 1, 0)
+SliderFill.BackgroundColor3 = Color3.fromRGB(0, 204, 204)
+SliderFill.BorderSizePixel = 0
+SliderFill.Parent = SliderBar
+
+local SliderFillCorner = Instance.new("UICorner")
+SliderFillCorner.CornerRadius = UDim.new(1, 0)
+SliderFillCorner.Parent = SliderFill
+
+local SliderButton = Instance.new("TextButton")
+SliderButton.Size = UDim2.new(0, 18, 0, 18)
+SliderButton.Position = UDim2.new(math.clamp(config.radius / 200, 0, 1), -9, 0.5, -9)
+SliderButton.Text = ""
+SliderButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SliderButton.Parent = SliderBar
+
+local SliderButtonCorner = Instance.new("UICorner")
+SliderButtonCorner.CornerRadius = UDim.new(1, 0)
+SliderButtonCorner.Parent = SliderButton
+
+local draggingSlider = false
+SliderButton.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        draggingSlider = true
+    end
+end)
+
+UserInputService.InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        draggingSlider = false
+        saveConfig()
+    end
+end)
+
+UserInputService.InputChanged:Connect(function(input)
+    if draggingSlider and (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+        local mousePos = UserInputService:GetMouseLocation().X
+        local barPos = SliderBar.AbsolutePosition.X
+        local barSize = SliderBar.AbsoluteSize.X
+        local percentage = math.clamp((mousePos - barPos) / barSize, 0, 1)
+        
+        config.radius = math.floor(percentage * 200)
+        SliderFill.Size = UDim2.new(percentage, 0, 1, 0)
+        SliderButton.Position = UDim2.new(percentage, -9, 0.5, -9)
+        RadiusLabel.Text = "Radius: " .. tostring(config.radius)
+    end
+end)
+
+local function isValidPart(part)
+    if not part:IsA("BasePart") or part.Anchored then return false end
+    if LocalPlayer.Character and (part:IsDescendantOf(LocalPlayer.Character) or part.Parent == LocalPlayer.Character) then 
+        return false 
+    end
+    return true
+end
+
+local function addPart(part)
+    if isValidPart(part) then
+        trackedParts[part] = true
+    end
+    
+    part.Changed:Connect(function(property)
+        if property == "Anchored" or property == "Parent" then
+            if isValidPart(part) then
+                trackedParts[part] = true
+            else
+                trackedParts[part] = nil
+            end
+        end
+    end)
+end
+
+task.spawn(function()
+    for _, part in pairs(workspace:GetDescendants()) do
+        addPart(part)
+    end
+end)
+
+workspace.DescendantAdded:Connect(addPart)
+workspace.DescendantRemoving:Connect(function(part)
+    trackedParts[part] = nil
+end)
+
+local function calculateOrbitPosition(partPos, targetCenter, time)
+    local targetPos
+    local speedMultiplier = config.superSpin and 5 or 1
+    local effectiveSpeed = config.rotationSpeed * speedMultiplier
+    
+    if config.orbitPattern == "still" then
+        local angle = math.atan2(partPos.Z - targetCenter.Z, partPos.X - targetCenter.X)
+        targetPos = Vector3.new(
+            targetCenter.X + math.cos(angle) * config.radius,
+            targetCenter.Y + config.height,
+            targetCenter.Z + math.sin(angle) * config.radius
+        )
+    else
+        local angleIncrement = math.rad(effectiveSpeed)
+        local angle = math.atan2(partPos.Z - targetCenter.Z, partPos.X - targetCenter.X)
+        local newAngle = angle + angleIncrement
+        
+        if config.orbitPattern == "circle" then
+            targetPos = Vector3.new(targetCenter.X + math.cos(newAngle) * config.radius, targetCenter.Y + config.height, targetCenter.Z + math.sin(newAngle) * config.radius)
+        elseif config.orbitPattern == "ellipse" then
+            targetPos = Vector3.new(targetCenter.X + math.cos(newAngle) * config.radius, targetCenter.Y + config.height, targetCenter.Z + math.sin(newAngle) * config.radius * config.ellipseRatio)
+        elseif config.orbitPattern == "figure8" then
+            targetPos = Vector3.new(targetCenter.X + math.sin(newAngle) * config.radius, targetCenter.Y + config.height, targetCenter.Z + math.sin(newAngle * 2) * config.radius * config.figure8Scale)
+        elseif config.orbitPattern == "spiral" then
+            local spiralRadius = config.radius + (time % 10) * config.spiralGrowth
+            targetPos = Vector3.new(targetCenter.X + math.cos(newAngle) * spiralRadius, targetCenter.Y + config.height, targetCenter.Z + math.sin(newAngle) * spiralRadius)
+        elseif config.orbitPattern == "helix" then
+            local helixHeight = config.height + math.sin(newAngle * 2) * 20
+            targetPos = Vector3.new(targetCenter.X + math.cos(newAngle) * config.radius, targetCenter.Y + helixHeight, targetCenter.Z + math.sin(newAngle) * config.radius)
+        elseif config.orbitPattern == "blackhole" then
+            local currentDist = (Vector3.new(partPos.X, targetCenter.Y, partPos.Z) - targetCenter).Magnitude
+            local vortexRadius = math.max(5, (currentDist * 0.95))
+            targetPos = Vector3.new(
+                targetCenter.X + math.cos(newAngle) * vortexRadius,
+                targetCenter.Y + config.height + math.sin(time * 5) * 5,
+                targetCenter.Z + math.sin(newAngle) * vortexRadius
+            )
+        else
+            targetPos = Vector3.new(targetCenter.X + math.cos(newAngle) * config.radius, targetCenter.Y + config.height, targetCenter.Z + math.sin(newAngle) * config.radius)
+        end
+    end
+    
+    return targetPos
+end
+
+RunService.Heartbeat:Connect(function(dt)
+    if not config.enabled then return end
+    
+    pcall(function()
+        sethiddenproperty(LocalPlayer, "SimulationRadius", math.huge)
+    end)
+    
+    local targetCenter
+    if config.followMouse then
+        local mouseLocation = UserInputService:GetMouseLocation()
+        local unitRay = Camera:ScreenPointToRay(mouseLocation.X, mouseLocation.Y)
+        
+        local raycastParams = RaycastParams.new()
+        raycastParams.FilterType = Enum.RaycastFilterType.Exclude
+        if LocalPlayer.Character then
+            raycastParams.FilterDescendantsInstances = {LocalPlayer.Character}
+        end
+        
+        local raycastResult = workspace:Raycast(unitRay.Origin, unitRay.Direction * 1000, raycastParams)
+        if raycastResult then
+            targetCenter = raycastResult.Position
+        else
+            targetCenter = unitRay.Origin + (unitRay.Direction * 150)
+        end
+    else
+        local targetPlayer = config.targetPlayer or LocalPlayer
+        if targetPlayer.Character and targetPlayer.Character:FindFirstChild("HumanoidRootPart") then
+            targetCenter = targetPlayer.Character.HumanoidRootPart.Position
+        else
+            local hrp = LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+            if hrp then targetCenter = hrp.Position else return end
+        end
+    end
+    
+    local currentTime = tick()
+    for part, _ in pairs(trackedParts) do
+        if part and part.Parent and not part.Anchored then
+            local dist = (part.Position - targetCenter).Magnitude
+            if dist < 500 then
+                pcall(function()
+                    part.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0, 0, 0)
+                end)
+                
+                local targetPos = calculateOrbitPosition(part.Position, targetCenter, currentTime)
+                local direction = (targetPos - part.Position)
+                
+                local clampedVel = direction * 16
+                part.Velocity = Vector3.new(
+                    math.clamp(clampedVel.X, -160, 160),
+                    math.clamp(clampedVel.Y, -160, 160),
+                    math.clamp(clampedVel.Z, -160, 160)
+                )
+            end
+        else
+            trackedParts[part] = nil
+        end
+    end
+end)
+
+local dragging, dragStart, startPos
+MainFrame.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        dragging = true
+        dragStart = input.Position
+        startPos = MainFrame.Position
+    end
+end)
+
+UserInputService.InputChanged:Connect(function(input)
+    if dragging and (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+        local delta = input.Position - dragStart
+        MainFrame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+    end
+end)
+
+UserInputService.InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        dragging = false
+    end
+end)
+
+local minimized = false
+MinimizeButton.MouseButton1Click:Connect(function()
+    minimized = not minimized
+    if minimized then
+        MainFrame:TweenSize(UDim2.new(0, 290, 0, 36), "Out", "Quad", 0.3, true)
+        MinimizeButton.Text = "+"
+        ContentFrame.Visible = false
+    else
+        MainFrame:TweenSize(UDim2.new(0, 290, 0, 440), "Out", "Quad", 0.3, true)
+        MinimizeButton.Text = "-"
+        ContentFrame.Visible = true
+    end
+end)
