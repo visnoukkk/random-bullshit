@@ -1,4 +1,4 @@
-9local Players = game:GetService("Players")
+local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local UserInputService = game:GetService("UserInputService")
 local HttpService = game:GetService("HttpService")
@@ -13,8 +13,8 @@ ScreenGui.ResetOnSpawn = false
 ScreenGui.Parent = LocalPlayer:WaitForChild("PlayerGui")
 
 local MainFrame = Instance.new("Frame")
-MainFrame.Size = UDim2.new(0, 290, 0, 440)
-MainFrame.Position = UDim2.new(0.5, -145, 0.5, -220)
+MainFrame.Size = UDim2.new(0, 290, 0, 460)
+MainFrame.Position = UDim2.new(0.5, -145, 0.5, -230)
 MainFrame.BackgroundColor3 = Color3.fromRGB(24, 24, 32)
 MainFrame.BorderSizePixel = 0
 MainFrame.Parent = ScreenGui
@@ -32,7 +32,7 @@ UIStroke.Parent = MainFrame
 local Title = Instance.new("TextLabel")
 Title.Size = UDim2.new(1, -64, 0, 32)
 Title.Position = UDim2.new(0, 4, 0, 4)
-Title.Text = "Super Rings V1.5"
+Title.Text = "Super Rings V1.5 by visnoukkk"
 Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title.BackgroundColor3 = Color3.fromRGB(0, 204, 204)
 Title.Font = Enum.Font.GothamBold
@@ -93,8 +93,7 @@ local config = {
     ellipseRatio = 0.6,
     figure8Scale = 0.5,
     starPoints = 5,
-    starInnerRadius = 0.5,
-    color = Color3.fromRGB(0, 255, 255)
+    starInnerRadius = 0.5
 }
 
 local function saveConfig()
@@ -136,7 +135,7 @@ local orbitPatterns = {
 }
 
 local RingToggleButton = Instance.new("TextButton")
-RingToggleButton.Size = UDim2.new(0, 52, 0, 34)
+RingToggleButton.Size = UDim2.new(0, 75, 0, 34)
 RingToggleButton.Position = UDim2.new(0, 0, 0, 0)
 RingToggleButton.Text = config.enabled and "ON" or "OFF"
 RingToggleButton.BackgroundColor3 = config.enabled and Color3.fromRGB(50, 200, 100) or Color3.fromRGB(220, 60, 60)
@@ -157,13 +156,13 @@ RingToggleButton.MouseButton1Click:Connect(function()
 end)
 
 local FollowMouseBtn = Instance.new("TextButton")
-FollowMouseBtn.Size = UDim2.new(0, 114, 0, 34)
-FollowMouseBtn.Position = UDim2.new(0, 58, 0, 0)
+FollowMouseBtn.Size = UDim2.new(1, -83, 0, 34)
+FollowMouseBtn.Position = UDim2.new(0, 83, 0, 0)
 FollowMouseBtn.Text = config.followMouse and "Mouse: ON" or "Mouse: OFF"
 FollowMouseBtn.BackgroundColor3 = config.followMouse and Color3.fromRGB(0, 150, 200) or Color3.fromRGB(45, 45, 55)
 FollowMouseBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 FollowMouseBtn.Font = Enum.Font.GothamBold
-FollowMouseBtn.TextSize = 10
+FollowMouseBtn.TextSize = 11
 FollowMouseBtn.Parent = ContentFrame
 
 local FollowMouseCorner = Instance.new("UICorner")
@@ -174,36 +173,6 @@ FollowMouseBtn.MouseButton1Click:Connect(function()
     config.followMouse = not config.followMouse
     FollowMouseBtn.Text = config.followMouse and "Mouse: ON" or "Mouse: OFF"
     FollowMouseBtn.BackgroundColor3 = config.followMouse and Color3.fromRGB(0, 150, 200) or Color3.fromRGB(45, 45, 55)
-    saveConfig()
-end)
-
-local ColorButton = Instance.new("TextButton")
-ColorButton.Size = UDim2.new(0, 92, 0, 34)
-ColorButton.Position = UDim2.new(1, -92, 0, 0)
-ColorButton.Text = "Color"
-ColorButton.BackgroundColor3 = config.color
-ColorButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-ColorButton.Font = Enum.Font.GothamBold
-ColorButton.TextSize = 11
-ColorButton.Parent = ContentFrame
-
-local ColorButtonCorner = Instance.new("UICorner")
-ColorButtonCorner.CornerRadius = UDim.new(0, 8)
-ColorButtonCorner.Parent = ColorButton
-
-ColorButton.MouseButton1Click:Connect(function()
-    local colors = {
-        Color3.fromRGB(0, 255, 255), Color3.fromRGB(255, 0, 255),
-        Color3.fromRGB(255, 255, 0), Color3.fromRGB(0, 255, 0),
-        Color3.fromRGB(255, 0, 0), Color3.fromRGB(0, 128, 255),
-        Color3.fromRGB(255, 128, 0), Color3.fromRGB(150, 0, 255)
-    }
-    local currentIndex = 1
-    for i, color in ipairs(colors) do
-        if math.abs(color.R - config.color.R) < 0.01 then currentIndex = i break end
-    end
-    config.color = colors[(currentIndex % #colors) + 1]
-    ColorButton.BackgroundColor3 = config.color
     saveConfig()
 end)
 
@@ -300,6 +269,7 @@ PatternDropdown.MouseButton1Click:Connect(function()
     PatternList.Visible = not PatternList.Visible
 end)
 
+-- Radius Slider
 local RadiusLabel = Instance.new("TextLabel")
 RadiusLabel.Size = UDim2.new(1, 0, 0, 20)
 RadiusLabel.Position = UDim2.new(0, 0, 0, 142)
@@ -371,11 +341,95 @@ UserInputService.InputChanged:Connect(function(input)
     end
 end)
 
+-- Height Slider
+local HeightLabel = Instance.new("TextLabel")
+HeightLabel.Size = UDim2.new(1, 0, 0, 20)
+HeightLabel.Position = UDim2.new(0, 0, 0, 188)
+HeightLabel.Text = "Height: " .. tostring(config.height)
+HeightLabel.TextColor3 = Color3.fromRGB(180, 180, 190)
+HeightLabel.BackgroundTransparency = 1
+HeightLabel.Font = Enum.Font.Gotham
+HeightLabel.TextSize = 11
+HeightLabel.TextXAlignment = Enum.TextXAlignment.Left
+HeightLabel.Parent = ContentFrame
+
+local HeightBar = Instance.new("Frame")
+HeightBar.Size = UDim2.new(1, 0, 0, 10)
+HeightBar.Position = UDim2.new(0, 0, 0, 214)
+HeightBar.BackgroundColor3 = Color3.fromRGB(35, 35, 45)
+HeightBar.BorderSizePixel = 0
+HeightBar.Parent = ContentFrame
+
+local HeightBarCorner = Instance.new("UICorner")
+HeightBarCorner.CornerRadius = UDim.new(1, 0)
+HeightBarCorner.Parent = HeightBar
+
+local HeightFill = Instance.new("Frame")
+HeightFill.Size = UDim2.new(math.clamp((config.height + 50) / 100, 0, 1), 0, 1, 0)
+HeightFill.BackgroundColor3 = Color3.fromRGB(0, 204, 204)
+HeightFill.BorderSizePixel = 0
+HeightFill.Parent = HeightBar
+
+local HeightFillCorner = Instance.new("UICorner")
+HeightFillCorner.CornerRadius = UDim.new(1, 0)
+HeightFillCorner.Parent = HeightFill
+
+local HeightButton = Instance.new("TextButton")
+HeightButton.Size = UDim2.new(0, 18, 0, 18)
+HeightButton.Position = UDim2.new(math.clamp((config.height + 50) / 100, 0, 1), -9, 0.5, -9)
+HeightButton.Text = ""
+HeightButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+HeightButton.Parent = HeightBar
+
+local HeightButtonCorner = Instance.new("UICorner")
+HeightButtonCorner.CornerRadius = UDim.new(1, 0)
+HeightButtonCorner.Parent = HeightButton
+
+local draggingHeight = false
+HeightButton.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        draggingHeight = true
+    end
+end)
+
+UserInputService.InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        draggingHeight = false
+        saveConfig()
+    end
+end)
+
+UserInputService.InputChanged:Connect(function(input)
+    if draggingHeight and (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+        local mousePos = UserInputService:GetMouseLocation().X
+        local barPos = HeightBar.AbsolutePosition.X
+        local barSize = HeightBar.AbsoluteSize.X
+        local percentage = math.clamp((mousePos - barPos) / barSize, 0, 1)
+        
+        config.height = math.floor(percentage * 100) - 50
+        HeightFill.Size = UDim2.new(percentage, 0, 1, 0)
+        HeightButton.Position = UDim2.new(percentage, -9, 0.5, -9)
+        HeightLabel.Text = "Height: " .. tostring(config.height)
+    end
+end)
+
 local function isValidPart(part)
     if not part:IsA("BasePart") or part.Anchored then return false end
-    if LocalPlayer.Character and (part:IsDescendantOf(LocalPlayer.Character) or part.Parent == LocalPlayer.Character) then 
-        return false 
+    
+    local character = LocalPlayer.Character
+    if character then
+        if part:IsDescendantOf(character) then
+            return false
+        end
     end
+    
+    local model = part:FindFirstAncestorOfClass("Model")
+    if model then
+        if Players:GetPlayerFromCharacter(model) then
+            return false
+        end
+    end
+    
     return true
 end
 
@@ -540,7 +594,7 @@ MinimizeButton.MouseButton1Click:Connect(function()
         MinimizeButton.Text = "+"
         ContentFrame.Visible = false
     else
-        MainFrame:TweenSize(UDim2.new(0, 290, 0, 440), "Out", "Quad", 0.3, true)
+        MainFrame:TweenSize(UDim2.new(0, 290, 0, 460), "Out", "Quad", 0.3, true)
         MinimizeButton.Text = "-"
         ContentFrame.Visible = true
     end
