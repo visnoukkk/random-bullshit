@@ -32,7 +32,7 @@ UIStroke.Parent = MainFrame
 local Title = Instance.new("TextLabel")
 Title.Size = UDim2.new(1, -64, 0, 32)
 Title.Position = UDim2.new(0, 4, 0, 4)
-Title.Text = "Super Rings V1.5 by visnoukkk"
+Title.Text = "Super Rings V1.5"
 Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title.BackgroundColor3 = Color3.fromRGB(0, 204, 204)
 Title.Font = Enum.Font.GothamBold
@@ -179,7 +179,7 @@ end)
 local SuperSpinBtn = Instance.new("TextButton")
 SuperSpinBtn.Size = UDim2.new(1, 0, 0, 30)
 SuperSpinBtn.Position = UDim2.new(0, 0, 0, 42)
-SuperSpinBtn.Text = config.superSpin and "Super Spin: ON 🔥" or "Super Spin: OFF"
+SuperSpinBtn.Text = config.superSpin and "Super Spin: ON" or "Super Spin: OFF"
 SuperSpinBtn.BackgroundColor3 = config.superSpin and Color3.fromRGB(255, 128, 0) or Color3.fromRGB(45, 45, 55)
 SuperSpinBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 SuperSpinBtn.Font = Enum.Font.GothamBold
@@ -192,7 +192,7 @@ SuperSpinCorner.Parent = SuperSpinBtn
 
 SuperSpinBtn.MouseButton1Click:Connect(function()
     config.superSpin = not config.superSpin
-    SuperSpinBtn.Text = config.superSpin and "Super Spin: ON 🔥" or "Super Spin: OFF"
+    SuperSpinBtn.Text = config.superSpin and "Super Spin: ON" or "Super Spin: OFF"
     SuperSpinBtn.BackgroundColor3 = config.superSpin and Color3.fromRGB(255, 128, 0) or Color3.fromRGB(45, 45, 55)
     saveConfig()
 end)
