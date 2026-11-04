@@ -1,357 +1,641 @@
---[[
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣶⣶⣦⡴⢶⣶⣶⣆⠸⠿⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⣻⣿⣷⣾⣿⣿⡿⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣤⠄⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣶⣾⣿⣿⣿⣿⡿⠃⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣾⣿⣿⣿⣿⣿⠿⣿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⣿⣿⣿⣿⣿⣿⠀⣿⣿⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣟⠛⠻⣿⣿⣿⣿⣦⡈⠉⠛⠻⡆⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣦⡈⢻⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣧⠈⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⢀⣀⡀⠸⣿⣿⣿⣿⣟⣀⣉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⣾⡿⠟⠛⠀⠉⠛⠛⠛⠛⠛⠛⠛⠛⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⢿⣧⣀⠀⠀⠀⠀⢀⣀⣠⣤⠶⠶⠶⠶⢶⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠈⠉⠛⠛⠛⠛⠉⠉⠀⠀⠀⠀⠀⣀⡼⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-This file was obfuscated by RatObfuscator V1.0.0
-]]
-local _ryuu_ilobF3U = { (string.char(226,155,184,226,150,135,227,131,160,226,161,140,236,133,144,227,130,148,240,159,155,159,233,174,164,225,131,179,240,159,165,145,227,130,179,226,158,173,215,151,226,156,188,225,131,152,212,180,226,160,132,225,131,175,226,150,134)), (string.char(227,129,142,232,190,131,240,159,152,189,215,149,225,131,184,226,157,184,213,147,215,148,225,131,145,227,129,150,235,179,145,226,162,151,225,131,175,216,182,240,159,155,147,226,152,131,229,170,188,224,164,158,226,158,173)) }
-local _shuu_ryuuyKiF = { (string.char(224,184,181,224,184,166,226,160,130,240,159,164,165,240,159,165,171,208,164,217,138,226,157,161,225,131,171,226,156,155,240,159,154,167,240,159,154,175,226,150,139,226,150,138,224,185,146,226,150,130,240,159,167,188,240,159,149,145,226,153,168,216,188,213,128,240,159,167,156,240,159,155,182,240,159,155,145,215,162,240,159,152,167,208,181,226,158,174,227,130,156,213,133,240,159,155,128,240,159,152,153,226,158,171,240,159,141,178,208,182,227,130,183,226,150,140,240,159,147,162,226,155,182,227,131,130,215,156,226,150,133,240,159,155,163,208,156,225,131,182,213,150,208,189,240,159,164,187,212,187,216,186)), (string.char(217,136,224,184,133,224,184,166,213,146,226,152,183,217,135,240,159,164,147,230,135,158,240,159,152,181,213,144,237,136,164,225,131,156,229,145,137,226,161,149,232,158,134,224,164,179,227,130,140,240,159,152,140,227,131,177,215,163,226,156,170,224,184,181)) }
-local _ryuu_kiri0CFw = { (string.char(216,176,240,159,152,138,240,159,164,187,240,159,167,162,229,184,170,226,153,177,240,159,149,148,240,159,148,157,226,161,131,225,131,168,225,131,182,213,143,224,164,138,226,153,187,226,158,170,227,129,154,225,131,174,215,164,224,184,189,224,164,160,208,161,227,130,191,226,158,183,227,131,168,227,131,177,226,157,129,227,130,182,226,152,154,224,164,160,224,164,143,227,130,178,240,159,155,161,226,162,164,226,153,156,240,159,154,182,225,131,173,227,129,169,226,150,128,235,176,164,227,130,168,226,162,139,240,159,140,178,240,159,151,191,225,131,151,226,150,134,225,131,145,216,190)), (string.char(225,131,150,224,185,148,226,157,145,215,154,240,159,154,179,217,137,224,184,191,227,129,191,226,150,147,213,148,226,156,163,226,150,134,226,150,150,226,156,160,224,184,186,215,160,240,159,155,131,216,181,226,156,145,240,159,164,132,215,162,224,185,128,227,129,191,226,150,143)) }
-local _ogun_iloG4gb = { (string.char(224,164,138,240,159,143,191,226,150,148,240,159,141,189,240,159,155,172,226,157,132,226,158,182,227,130,141,227,129,133,227,130,179,224,184,182,240,159,154,148,213,131,224,185,146,226,152,137,226,157,151,215,165,216,188,226,162,168,212,189)), (string.char(226,150,153,240,159,153,137,240,159,150,140,226,150,146,225,131,156,224,164,172,240,159,152,184,224,164,173,215,158,234,178,173,240,159,164,143,236,159,167,208,163,240,159,154,163,224,185,132,226,157,163,227,130,155,227,131,141,226,161,139,226,150,153,216,174)) }
-local _okra_fjorlvzK = { (string.char(225,131,169,240,159,167,144,240,159,142,184,240,159,153,134,240,159,165,158,240,159,166,185,236,129,164,225,131,165,224,164,151,227,131,149,237,142,176,240,159,164,153,212,185,240,159,152,134,240,159,153,131,240,159,144,189,226,156,142,226,158,164,226,150,157,232,136,144,226,154,158,226,150,145,240,159,140,185,240,159,165,142,226,160,185)), (string.char(240,159,154,185,225,131,184,226,160,188,227,129,164,227,131,128,226,158,140,224,184,175,226,154,138,226,158,184,227,130,161,227,129,169)) }
-local _okra_shuuTj4A = { (string.char(209,139,226,155,166,236,189,164,226,150,154,226,158,155,240,159,155,150,226,156,154,240,159,155,157,226,158,176,227,129,172,226,158,176,230,137,135,229,172,145,213,148,230,133,151,235,155,178,227,130,167,233,130,185,224,184,185,224,164,160,212,188,240,159,155,173,216,173,225,131,152,230,151,151,227,131,183,226,158,134,212,191,240,159,155,190,226,156,156,224,164,142,236,166,140,240,159,154,144,216,175,225,131,150,240,159,150,153,225,131,156,209,137)), (string.char(215,169,240,159,152,165,225,131,172,225,131,161,225,131,169,227,129,159,209,141,215,152,208,176,227,130,189,208,159,227,130,164,240,159,155,185,232,132,135,226,156,157,227,130,153,208,156)) }
-local _jin_miraQeNN = { (string.char(226,160,164,227,130,136,224,185,137,224,184,131,240,159,153,140,236,158,137,226,150,150,231,146,130,240,159,167,148,227,131,147,227,131,135,226,162,182,226,162,173,215,162,226,158,138,225,131,149)), (string.char(226,152,147,224,184,156,240,159,155,143,216,168,226,162,142,240,159,152,160,226,155,145,235,129,129,209,136,227,129,135,209,135)) }
-local _kopf_hodaeHfJ = { (string.char(240,159,165,156,240,159,167,182,225,131,177,224,164,150,224,184,190,233,162,140,227,130,172,227,131,154,226,150,151,213,130,240,159,155,156,225,131,181,240,159,154,175,227,129,150,224,164,168,226,163,156,225,131,175,240,159,155,190,226,158,145,226,157,169,224,164,185,240,159,145,144,236,164,177,240,159,152,134,240,159,154,137,226,161,159,216,188,227,131,135,226,153,142,224,164,143)), (string.char(226,158,129,226,150,146,232,151,145,228,185,156,226,150,129,224,184,184,225,131,184,240,159,153,133,227,131,189,213,135,227,129,138,226,158,180,240,159,152,149,236,158,171,226,162,141,215,170,227,131,136)) }
-local _nyx_amziEUdK = { (string.char(240,159,153,134,240,159,152,158,226,156,180,225,131,168,227,129,191,240,159,166,142,227,131,163,227,131,159,230,188,179,208,157,236,169,158,227,131,169,224,164,178,217,135,226,161,191,216,178,226,158,131,225,131,175,216,176,224,185,139,226,156,153,236,172,160,240,159,167,180,212,186,240,159,167,186,235,175,188,227,129,132,240,159,145,169,240,159,152,147,233,186,185,240,159,155,184,215,145,224,184,151,237,142,160,224,184,153,240,159,153,132,226,150,157,240,159,150,129,217,135,224,164,176,217,131,226,152,143,227,129,157,225,131,145)), (string.char(224,184,146,230,144,180,224,184,185,213,129,217,133,236,137,146,240,159,146,141,213,142,240,159,153,138,217,134,226,154,131,240,159,145,173)) }
-local _gato_moravln6 = { (string.char(227,130,157,226,157,159,236,149,143,240,159,152,155,209,131,227,131,143,208,191,240,159,155,151,226,152,144,226,158,165,227,131,141,213,139,215,160,226,156,128,226,154,139,213,147,236,155,154,225,131,179,226,158,145,224,164,146,226,162,167,213,146,226,158,155,208,170,229,187,139,215,146,240,159,154,182,240,159,166,168,237,148,165,209,132,240,159,167,133,227,131,154,226,157,147,226,156,154,227,130,172,226,163,186,240,159,151,176,240,159,145,157)), (string.char(215,168,212,182,240,159,165,130,234,186,165,240,159,165,140,224,184,145,226,156,151,226,158,187,240,159,152,138,209,131,227,130,184,226,161,147,226,160,165,212,189,224,164,159,240,159,167,150,224,164,137,227,129,131,233,184,162,237,141,145,226,150,151)) }
-local _amzi_hoda0Oku = getfenv()
-local _fjor_xethXSpL = 143
-local _vyn_dumoiIPB = {{223,227,238,246,234,253,252},{232,238,226,234},{200,234,251,220,234,253,249,230,236,234},{221,250,225,220,234,253,249,230,236,234},{218,252,234,253,198,225,255,250,251,220,234,253,249,230,236,234},{199,251,251,255,220,234,253,249,230,236,234},{195,224,236,238,227,223,227,238,246,234,253},{194,224,250,252,234},{200,234,251,194,224,250,252,234},{204,238,226,234,253,238},{248,224,253,228,252,255,238,236,234},{204,250,253,253,234,225,251,204,238,226,234,253,238},{220,236,253,234,234,225,200,250,230},{198,225,252,251,238,225,236,234},{225,234,248},{193,238,226,234},{220,250,255,234,253,221,230,225,232,223,238,253,251,252,200,218,198},{221,234,252,234,251,192,225,220,255,238,248,225},{223,238,253,234,225,251},{216,238,230,251,201,224,253,204,231,230,227,235},{223,227,238,246,234,253,200,250,230},{194,238,230,225,201,253,238,226,234},{201,253,238,226,234},{220,230,245,234},{218,203,230,226,189},{223,224,252,230,251,230,224,225},{205,238,236,228,232,253,224,250,225,235,204,224,227,224,253,188},{204,224,227,224,253,188},{233,253,224,226,221,200,205},{205,224,253,235,234,253,220,230,245,234,223,230,247,234,227},{218,198,204,224,253,225,234,253},{204,224,253,225,234,253,221,238,235,230,250,252},{218,203,230,226},{218,198,220,251,253,224,228,234},{204,224,227,224,253},{219,253,238,225,252,255,238,253,234,225,236,246},{219,231,230,236,228,225,234,252,252},{219,230,251,227,234},{219,234,247,251,195,238,237,234,227},{219,234,247,251},{220,250,255,234,253,175,221,230,225,232,252,175,217,190,161,186,175,237,246,175,249,230,252,225,224,250,228,228,228},{219,234,247,251,204,224,227,224,253,188},{201,224,225,251},{202,225,250,226},{200,224,251,231,238,226,205,224,227,235},{219,234,247,251,220,230,245,234},{219,230,251,227,234,204,224,253,225,234,253},{194,230,225,230,226,230,245,234,205,250,251,251,224,225},{219,234,247,251,205,250,251,251,224,225},{162},{194,230,225,230,226,230,245,234,204,224,253,225,234,253},{204,227,224,252,234,205,250,251,251,224,225},{215},{204,227,224,252,234,204,224,253,225,234,253},{204,224,225,251,234,225,251,201,253,238,226,234},{205,238,236,228,232,253,224,250,225,235,219,253,238,225,252,255,238,253,234,225,236,246},{236,224,225,233,230,232},{234,225,238,237,227,234,235},{253,238,235,230,250,252},{231,234,230,232,231,251},{253,224,251,238,251,230,224,225,220,255,234,234,235},{238,251,251,253,238,236,251,230,224,225,220,251,253,234,225,232,251,231},{251,238,253,232,234,251,194,224,235,234},{255,227,238,246,234,253},{233,224,227,227,224,248,194,224,250,252,234},{252,250,255,234,253,220,255,230,225},{251,238,253,232,234,251,223,227,238,246,234,253},{251,238,253,232,234,251,223,238,253,251},{224,253,237,230,251,223,238,251,251,234,253,225},{236,230,253,236,227,234},{252,255,230,253,238,227,200,253,224,248,251,231},{234,227,227,230,255,252,234,221,238,251,230,224},{233,230,232,250,253,234,183,220,236,238,227,234},{252,251,238,253,223,224,230,225,251,252},{252,251,238,253,198,225,225,234,253,221,238,235,230,250,252},{252,238,249,234,204,224,225,233,230,232},{255,236,238,227,227},{248,253,230,251,234,233,230,227,234},{220,250,255,234,253,221,230,225,232,223,238,253,251,252,204,224,225,233,230,232,161,251,247,251},{197,220,192,193,202,225,236,224,235,234},{251,253,238,236,228,234,235,223,238,253,251,252},{194,224,250,252,234,205,250,251,251,224,225,190,204,227,230,236,228},{204,224,225,225,234,236,251},{255,238,253,251},{208},{255,238,230,253,252},{206,225,236,231,224,253,234,235},{217,234,227,224,236,230,251,246},{217,234,236,251,224,253,188},{221,224,251,217,234,227,224,236,230,251,246},{203,234,252,251,253,224,246},{224,253,237,230,251,223,238,251,251,234,253,225,252},{204,230,253,236,227,234},{234,227,227,230,255,252,234},{202,227,227,230,255,252,234},{233,230,232,250,253,234,183},{201,230,232,250,253,234,175,183},{252,255,230,253,238,227},{220,255,230,253,238,227},{231,234,227,230,247},{199,234,227,230,247},{248,238,249,234},{216,238,249,234},{252,251,238,253},{220,251,238,253},{233,227,224,248,234,253},{201,227,224,248,234,253},{230,225,233,230,225,230,251,246},{198,225,233,230,225,230,251,246},{237,227,238,236,228,231,224,227,234},{205,227,238,236,228,231,224,227,234},{237,227,238,236,228,231,224,227,234,252,248,238,227,227,224,248,249,190},{205,227,238,236,228,231,224,227,234,175,220,248,238,227,227,224,248,175,217,190},{251,224,253,225,238,235,224,249,190},{219,224,253,225,238,235,224,175,217,190},{252,251,230,227,227},{220,251,230,227,227},{253,238,225,235,224,226},{221,238,225,235,224,226},{221,230,225,232,219,224,232,232,227,234,205,250,251,251,224,225},{192,193},{192,201,201},{221,230,225,232,219,224,232,232,227,234,204,224,253,225,234,253},{201,224,227,227,224,248,194,224,250,252,234,205,251,225},{194,224,250,252,234,181,175,192,193},{194,224,250,252,234,181,175,192,201,201},{201,224,227,227,224,248,194,224,250,252,234,204,224,253,225,234,253},{220,250,255,234,253,220,255,230,225,205,251,225},{220,250,255,234,253,175,220,255,230,225,181,175,192,193,175,127,16,27,42},{220,250,255,234,253,175,220,255,230,225,181,175,192,201,201},{220,250,255,234,253,220,255,230,225,204,224,253,225,234,253},{223,238,251,251,234,253,225,195,238,237,234,227},{192,253,237,230,251,175,223,238,251,251,234,253,225,181},{200,224,251,231,238,226},{219,234,247,251,215,206,227,230,232,225,226,234,225,251},{195,234,233,251},{223,238,251,251,234,253,225,203,253,224,255,235,224,248,225},{213,198,225,235,234,247},{223,238,251,251,234,253,225,203,253,224,255,235,224,248,225,204,224,253,225,234,253},{223,238,251,251,234,253,225,195,230,252,251},{220,236,253,224,227,227,230,225,232,201,253,238,226,234},{217,230,252,230,237,227,234},{220,236,253,224,227,227,205,238,253,219,231,230,236,228,225,234,252,252},{223,238,251,251,234,253,225,195,230,252,251,204,224,253,225,234,253},{255,238,251,251,234,253,225,214},{255,238,251,251,234,253,225,196,234,246},{255,238,251,251,234,253,225,193,238,226,234},{223,238,251,251,234,253,225,192,255,251,230,224,225},{223,238,251,251,234,253,225,192,255,251,230,224,225,204,224,253,225,234,253},{204,238,225,249,238,252,220,230,245,234},{221,238,235,230,250,252,195,238,237,234,227},{221,238,235,230,250,252,181,175},{251,224,252,251,253,230,225,232},{220,227,230,235,234,253,205,238,253},{220,227,230,235,234,253,205,238,253,204,224,253,225,234,253},{220,227,230,235,234,253,201,230,227,227},{226,238,251,231},{236,227,238,226,255},{220,227,230,235,234,253,201,230,227,227,204,224,253,225,234,253},{220,227,230,235,234,253,205,250,251,251,224,225},{},{220,227,230,235,234,253,205,250,251,251,224,225,204,224,253,225,234,253},{235,253,238,232,232,230,225,232,220,227,230,235,234,253},{198,225,255,250,251,205,234,232,238,225},{230,225,255,250,251},{218,252,234,253,198,225,255,250,251,219,246,255,234},{194,224,250,252,234,205,250,251,251,224,225,190},{219,224,250,236,231},{198,225,255,250,251,202,225,235,234,235},{198,225,255,250,251,204,231,238,225,232,234,235},{194,224,250,252,234,194,224,249,234,226,234,225,251},{226,224,250,252,234,223,224,252},{200,234,251,194,224,250,252,234,195,224,236,238,251,230,224,225},{237,238,253,223,224,252},{206,237,252,224,227,250,251,234,223,224,252,230,251,230,224,225},{237,238,253,220,230,245,234},{206,237,252,224,227,250,251,234,220,230,245,234},{255,234,253,236,234,225,251,238,232,234},{233,227,224,224,253},{199,234,230,232,231,251,195,238,237,234,227},{199,234,230,232,231,251,181,175},{199,234,230,232,231,251,205,238,253},{199,234,230,232,231,251,205,238,253,204,224,253,225,234,253},{199,234,230,232,231,251,201,230,227,227},{199,234,230,232,231,251,201,230,227,227,204,224,253,225,234,253},{199,234,230,232,231,251,205,250,251,251,224,225},{199,234,230,232,231,251,205,250,251,251,224,225,204,224,253,225,234,253},{235,253,238,232,232,230,225,232,199,234,230,232,231,251},{230,252,217,238,227,230,235,223,238,253,251},{198,252,206},{205,238,252,234,223,238,253,251},{236,231,238,253,238,236,251,234,253},{204,231,238,253,238,236,251,234,253},{198,252,203,234,252,236,234,225,235,238,225,251,192,233},{226,224,235,234,227},{201,230,225,235,201,230,253,252,251,206,225,236,234,252,251,224,253,192,233,204,227,238,252,252},{194,224,235,234,227},{200,234,251,223,227,238,246,234,253,201,253,224,226,204,231,238,253,238,236,251,234,253},{233,227,230,225,232,230,225,232,223,238,253,251,252},{252,234,251,250,255,219,224,253,225,238,235,224,219,224,250,236,231},{219,224,250,236,231,234,235},{231,230,251},{231,250,226,238,225,224,230,235},{201,230,225,235,201,230,253,252,251,204,231,230,227,235,192,233,204,227,238,252,252},{199,250,226,238,225,224,230,235},{253,224,224,251,223,238,253,251},{201,230,225,235,201,230,253,252,251,204,231,230,227,235},{199,250,226,238,225,224,230,235,221,224,224,251,223,238,253,251},{238,235,235,223,238,253,251},{204,231,238,225,232,234,235},{255,253,224,255,234,253,251,246},{251,238,252,228},{252,255,238,248,225},{200,234,251,203,234,252,236,234,225,235,238,225,251,252},{203,234,252,236,234,225,235,238,225,251,206,235,235,234,235},{203,234,252,236,234,225,235,238,225,251,221,234,226,224,249,230,225,232},{236,238,227,236,250,227,238,251,234,192,253,237,230,251,223,224,252,230,251,230,224,225},{255,238,253,251,223,224,252},{251,238,253,232,234,251,204,234,225,251,234,253},{251,230,226,234},{230,225,235,234,247},{251,238,253,232,234,251,223,224,252},{252,255,234,234,235,194,250,227,251,230,255,227,230,234,253},{234,233,233,234,236,251,230,249,234,220,255,234,234,235},{238,225,232,227,234},{238,251,238,225,189},{213},{236,224,252},{214},{252,230,225},{238,225,232,227,234,198,225,236,253,234,226,234,225,251},{253,238,235},{237,238,252,234,206,225,232,227,234},{233,250,225,225,234,227,221,238,235,230,250,252},{225,234,248,206,225,232,227,234},{252,255,230,253,238,227,221,238,235,230,250,252},{231,234,227,230,247,199,234,230,232,231,251},{236,250,253,253,234,225,251,203,230,252,251},{194,238,232,225,230,251,250,235,234},{249,224,253,251,234,247,221,238,235,230,250,252},{226,238,247},{199,234,238,253,251,237,234,238,251},{235,251},{252,234,251,231,230,235,235,234,225,255,253,224,255,234,253,251,246},{220,230,226,250,227,238,251,230,224,225,221,238,235,230,250,252},{231,250,232,234},{226,224,250,252,234,195,224,236,238,251,230,224,225},{250,225,230,251,221,238,246},{220,236,253,234,234,225,223,224,230,225,251,219,224,221,238,246},{253,238,246,236,238,252,251,223,238,253,238,226,252},{221,238,246,236,238,252,251,223,238,253,238,226,252},{201,230,227,251,234,253,219,246,255,234},{221,238,246,236,238,252,251,201,230,227,251,234,253,219,246,255,234},{202,247,236,227,250,235,234},{201,230,227,251,234,253,203,234,252,236,234,225,235,238,225,251,252,198,225,252,251,238,225,236,234,252},{253,238,246,236,238,252,251,221,234,252,250,227,251},{221,238,246,236,238,252,251},{192,253,230,232,230,225},{203,230,253,234,236,251,230,224,225},{231,253,255},{236,250,253,253,234,225,251,219,230,226,234},{251,230,236,228},{235,230,252,251},{204,250,252,251,224,226,223,231,246,252,230,236,238,227,223,253,224,255,234,253,251,230,234,252},{223,231,246,252,230,236,238,227,223,253,224,255,234,253,251,230,234,252},{235,230,253,234,236,251,230,224,225},{236,227,238,226,255,234,235,217,234,227},{235,253,238,232,232,230,225,232},{235,253,238,232,220,251,238,253,251},{252,251,238,253,251,223,224,252},{235,234,227,251,238},{220,236,238,227,234},{192,233,233,252,234,251},{226,230,225,230,226,230,245,234,235},{219,248,234,234,225,220,230,245,234},{192,250,251},{222,250,238,235},{164}}
-local _nyx_kopf2NCo = {}
-for _zhu_ogun0ERU = 1, #_vyn_dumoiIPB do
-    local _nyx_solkqk8 = _vyn_dumoiIPB[_zhu_ogun0ERU]
-    local _dumo_shuuHilJ = {}
-    for _dumo_ogunTBfk = 1, #_nyx_solkqk8 do
-        _dumo_shuuHilJ[_dumo_ogunTBfk] = string.char(bit32.bxor(_nyx_solkqk8[_dumo_ogunTBfk], _fjor_xethXSpL))
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local HttpService = game:GetService("HttpService")
+
+local LocalPlayer = Players.LocalPlayer
+local Mouse = LocalPlayer:GetMouse()
+local Camera = workspace.CurrentCamera
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "SuperRingPartsGUI"
+ScreenGui.ResetOnSpawn = false
+ScreenGui.Parent = LocalPlayer:WaitForChild("PlayerGui")
+
+local MainFrame = Instance.new("Frame")
+MainFrame.Size = UDim2.new(0, 290, 0, 460)
+MainFrame.Position = UDim2.new(0.5, -145, 0.5, -230)
+MainFrame.BackgroundColor3 = Color3.fromRGB(24, 24, 32)
+MainFrame.BorderSizePixel = 0
+MainFrame.Parent = ScreenGui
+
+local UICorner = Instance.new("UICorner")
+UICorner.CornerRadius = UDim.new(0, 12)
+UICorner.Parent = MainFrame
+
+local UIStroke = Instance.new("UIStroke")
+UIStroke.Color = Color3.fromRGB(0, 204, 204)
+UIStroke.Transparency = 0.5
+UIStroke.Thickness = 1.5
+UIStroke.Parent = MainFrame
+
+local Title = Instance.new("TextLabel")
+Title.Size = UDim2.new(1, -64, 0, 32)
+Title.Position = UDim2.new(0, 4, 0, 4)
+Title.Text = "Super Rings V1.5"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundColor3 = Color3.fromRGB(0, 204, 204)
+Title.Font = Enum.Font.GothamBold
+Title.TextSize = 13
+Title.Parent = MainFrame
+
+local TitleCorner = Instance.new("UICorner")
+TitleCorner.CornerRadius = UDim.new(0, 8)
+TitleCorner.Parent = Title
+
+local MinimizeButton = Instance.new("TextButton")
+MinimizeButton.Size = UDim2.new(0, 26, 0, 26)
+MinimizeButton.Position = UDim2.new(1, -58, 0, 7)
+MinimizeButton.Text = "-"
+MinimizeButton.BackgroundColor3 = Color3.fromRGB(255, 200, 50)
+MinimizeButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+MinimizeButton.Font = Enum.Font.GothamBold
+MinimizeButton.TextSize = 16
+MinimizeButton.Parent = MainFrame
+
+local MinimizeCorner = Instance.new("UICorner")
+MinimizeCorner.CornerRadius = UDim.new(1, 0)
+MinimizeCorner.Parent = MinimizeButton
+
+local CloseButton = Instance.new("TextButton")
+CloseButton.Size = UDim2.new(0, 26, 0, 26)
+CloseButton.Position = UDim2.new(1, -29, 0, 7)
+CloseButton.Text = "X"
+CloseButton.BackgroundColor3 = Color3.fromRGB(255, 60, 60)
+CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CloseButton.Font = Enum.Font.GothamBold
+CloseButton.TextSize = 14
+CloseButton.Parent = MainFrame
+
+local CloseCorner = Instance.new("UICorner")
+CloseCorner.CornerRadius = UDim.new(1, 0)
+CloseCorner.Parent = CloseButton
+
+local ContentFrame = Instance.new("Frame")
+ContentFrame.Size = UDim2.new(1, -16, 1, -44)
+ContentFrame.Position = UDim2.new(0, 8, 0, 38)
+ContentFrame.BackgroundTransparency = 1
+ContentFrame.Parent = MainFrame
+
+local config = {
+    enabled = false,
+    radius = 50,
+    height = 10,
+    rotationSpeed = 10,
+    attractionStrength = 1000,
+    targetMode = "player",
+    followMouse = false,
+    superSpin = false,
+    targetPlayer = nil,
+    targetPart = nil,
+    orbitPattern = "circle",
+    spiralGrowth = 0.1,
+    ellipseRatio = 0.6,
+    figure8Scale = 0.5,
+    starPoints = 5,
+    starInnerRadius = 0.5
+}
+
+local function saveConfig()
+    pcall(function()
+        writefile("SuperRingPartsConfig.txt", HttpService:JSONEncode(config))
+    end)
+end
+
+local trackedParts = {}
+
+CloseButton.MouseButton1Click:Connect(function()
+    config.enabled = false
+    
+    for part, _ in pairs(trackedParts) do
+        if part and part.Parent and not part.Anchored then
+            pcall(function()
+                part.Velocity = Vector3.new(0, 0, 0)
+                part.RotVelocity = Vector3.new(0, 0, 0)
+            end)
+        end
     end
-    _nyx_kopf2NCo[_zhu_ogun0ERU] = table.concat(_dumo_shuuHilJ)
+    
+    ScreenGui:Destroy()
+end)
+
+local orbitPatterns = {
+    circle = "Circle",
+    ellipse = "Ellipse",
+    figure8 = "Figure 8",
+    spiral = "Spiral",
+    helix = "Helix",
+    wave = "Wave",
+    star = "Star",
+    flower = "Flower",
+    infinity = "Infinity",
+    blackhole = "Blackhole",
+    blackholeswallowv1 = "Blackhole Swallow V1",
+    tornadov1 = "Tornado V1",
+    still = "Still",
+    random = "Random"
+}
+
+local RingToggleButton = Instance.new("TextButton")
+RingToggleButton.Size = UDim2.new(0, 75, 0, 34)
+RingToggleButton.Position = UDim2.new(0, 0, 0, 0)
+RingToggleButton.Text = config.enabled and "ON" or "OFF"
+RingToggleButton.BackgroundColor3 = config.enabled and Color3.fromRGB(50, 200, 100) or Color3.fromRGB(220, 60, 60)
+RingToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+RingToggleButton.Font = Enum.Font.GothamBold
+RingToggleButton.TextSize = 11
+RingToggleButton.Parent = ContentFrame
+
+local RingToggleCorner = Instance.new("UICorner")
+RingToggleCorner.CornerRadius = UDim.new(0, 8)
+RingToggleCorner.Parent = RingToggleButton
+
+RingToggleButton.MouseButton1Click:Connect(function()
+    config.enabled = not config.enabled
+    RingToggleButton.Text = config.enabled and "ON" or "OFF"
+    RingToggleButton.BackgroundColor3 = config.enabled and Color3.fromRGB(50, 200, 100) or Color3.fromRGB(220, 60, 60)
+    saveConfig()
+end)
+
+local FollowMouseBtn = Instance.new("TextButton")
+FollowMouseBtn.Size = UDim2.new(1, -83, 0, 34)
+FollowMouseBtn.Position = UDim2.new(0, 83, 0, 0)
+FollowMouseBtn.Text = config.followMouse and "Mouse: ON" or "Mouse: OFF"
+FollowMouseBtn.BackgroundColor3 = config.followMouse and Color3.fromRGB(0, 150, 200) or Color3.fromRGB(45, 45, 55)
+FollowMouseBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+FollowMouseBtn.Font = Enum.Font.GothamBold
+FollowMouseBtn.TextSize = 11
+FollowMouseBtn.Parent = ContentFrame
+
+local FollowMouseCorner = Instance.new("UICorner")
+FollowMouseCorner.CornerRadius = UDim.new(0, 8)
+FollowMouseCorner.Parent = FollowMouseBtn
+
+FollowMouseBtn.MouseButton1Click:Connect(function()
+    config.followMouse = not config.followMouse
+    FollowMouseBtn.Text = config.followMouse and "Mouse: ON" or "Mouse: OFF"
+    FollowMouseBtn.BackgroundColor3 = config.followMouse and Color3.fromRGB(0, 150, 200) or Color3.fromRGB(45, 45, 55)
+    saveConfig()
+end)
+
+local SuperSpinBtn = Instance.new("TextButton")
+SuperSpinBtn.Size = UDim2.new(1, 0, 0, 30)
+SuperSpinBtn.Position = UDim2.new(0, 0, 0, 42)
+SuperSpinBtn.Text = config.superSpin and "Super Spin: ON" or "Super Spin: OFF"
+SuperSpinBtn.BackgroundColor3 = config.superSpin and Color3.fromRGB(255, 128, 0) or Color3.fromRGB(45, 45, 55)
+SuperSpinBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+SuperSpinBtn.Font = Enum.Font.GothamBold
+SuperSpinBtn.TextSize = 11
+SuperSpinBtn.Parent = ContentFrame
+
+local SuperSpinCorner = Instance.new("UICorner")
+SuperSpinCorner.CornerRadius = UDim.new(0, 8)
+SuperSpinCorner.Parent = SuperSpinBtn
+
+SuperSpinBtn.MouseButton1Click:Connect(function()
+    config.superSpin = not config.superSpin
+    SuperSpinBtn.Text = config.superSpin and "Super Spin: ON" or "Super Spin: OFF"
+    SuperSpinBtn.BackgroundColor3 = config.superSpin and Color3.fromRGB(255, 128, 0) or Color3.fromRGB(45, 45, 55)
+    saveConfig()
+end)
+
+local PatternLabel = Instance.new("TextLabel")
+PatternLabel.Size = UDim2.new(0, 130, 0, 20)
+PatternLabel.Position = UDim2.new(0, 0, 0, 80)
+PatternLabel.Text = "Orbit Pattern:"
+PatternLabel.TextColor3 = Color3.fromRGB(180, 180, 190)
+PatternLabel.BackgroundTransparency = 1
+PatternLabel.Font = Enum.Font.Gotham
+PatternLabel.TextSize = 11
+PatternLabel.TextXAlignment = Enum.TextXAlignment.Left
+PatternLabel.Parent = ContentFrame
+
+local PatternDropdown = Instance.new("TextButton")
+PatternDropdown.Size = UDim2.new(1, 0, 0, 30)
+PatternDropdown.Position = UDim2.new(0, 0, 0, 102)
+PatternDropdown.Text = orbitPatterns[config.orbitPattern]
+PatternDropdown.BackgroundColor3 = Color3.fromRGB(35, 35, 45)
+PatternDropdown.TextColor3 = Color3.fromRGB(255, 255, 255)
+PatternDropdown.Font = Enum.Font.Gotham
+PatternDropdown.TextSize = 11
+PatternDropdown.ZIndex = 10
+PatternDropdown.Parent = ContentFrame
+
+local PatternDropdownCorner = Instance.new("UICorner")
+PatternDropdownCorner.CornerRadius = UDim.new(0, 8)
+PatternDropdownCorner.Parent = PatternDropdown
+
+local PatternList = Instance.new("ScrollingFrame")
+PatternList.Size = UDim2.new(1, 0, 0, 140)
+PatternList.Position = UDim2.new(0, 0, 0, 136)
+PatternList.BackgroundColor3 = Color3.fromRGB(35, 35, 45)
+PatternList.BorderSizePixel = 0
+PatternList.Visible = false
+PatternList.ScrollBarThickness = 4
+PatternList.ZIndex = 10
+PatternList.Parent = ContentFrame
+
+local PatternListCorner = Instance.new("UICorner")
+PatternListCorner.CornerRadius = UDim.new(0, 8)
+PatternListCorner.Parent = PatternList
+
+local patternY = 0
+for patternKey, patternName in pairs(orbitPatterns) do
+    local PatternOption = Instance.new("TextButton")
+    PatternOption.Size = UDim2.new(1, -6, 0, 24)
+    PatternOption.Position = UDim2.new(0, 3, 0, patternY)
+    PatternOption.Text = patternName
+    PatternOption.BackgroundColor3 = Color3.fromRGB(45, 45, 55)
+    PatternOption.TextColor3 = Color3.fromRGB(255, 255, 255)
+    PatternOption.Font = Enum.Font.Gotham
+    PatternOption.TextSize = 11
+    PatternOption.ZIndex = 10
+    PatternOption.Parent = PatternList
+    
+    local PatternOptionCorner = Instance.new("UICorner")
+    PatternOptionCorner.CornerRadius = UDim.new(0, 6)
+    PatternOptionCorner.Parent = PatternOption
+    
+    PatternOption.MouseButton1Click:Connect(function()
+        config.orbitPattern = patternKey
+        PatternDropdown.Text = patternName
+        PatternList.Visible = false
+        saveConfig()
+    end)
+    
+    patternY = patternY + 26
 end
+PatternList.CanvasSize = UDim2.new(0, 0, 0, patternY)
 
-local _dumo_wabeakfU = {}
-local _qeth_wabesE9y = {}
-local _dumo_hodanl3V, _gato_tovoNjQq, _jin_pyraD0FH, _ogun_amziQezo, _amzi_shuuBgZq, _bhai_amziGsJv
-local _bhai_kopfMxya, _uzle_ryuuDhoq, _tovo_bhaiJVYk, _vesh_gatokhmD
+PatternDropdown.MouseButton1Click:Connect(function()
+    PatternList.Visible = not PatternList.Visible
+end)
 
-local function _luna_uzle17zu(...)
-    return { n = select((string.char(35)), ...), ... }
-end
+local RadiusLabel = Instance.new("TextLabel")
+RadiusLabel.Size = UDim2.new(1, 0, 0, 20)
+RadiusLabel.Position = UDim2.new(0, 0, 0, 142)
+RadiusLabel.Text = "Radius: " .. tostring(config.radius)
+RadiusLabel.TextColor3 = Color3.fromRGB(180, 180, 190)
+RadiusLabel.BackgroundTransparency = 1
+RadiusLabel.Font = Enum.Font.Gotham
+RadiusLabel.TextSize = 11
+RadiusLabel.TextXAlignment = Enum.TextXAlignment.Left
+RadiusLabel.Parent = ContentFrame
 
-local function _shuu_okracC5w(parent)
-    return { parent = parent, decl = {}, vars = {}, va = nil }
-end
+local SliderBar = Instance.new("Frame")
+SliderBar.Size = UDim2.new(1, 0, 0, 10)
+SliderBar.Position = UDim2.new(0, 0, 0, 168)
+SliderBar.BackgroundColor3 = Color3.fromRGB(35, 35, 45)
+SliderBar.BorderSizePixel = 0
+SliderBar.Parent = ContentFrame
 
-local function _amzi_sol6ozy(_jin_xethEsTM, _bhai_shuurgB6, _dumo_kopfUwDi)
-    _jin_xethEsTM.decl[_bhai_shuurgB6] = true
-    _jin_xethEsTM.vars[_bhai_shuurgB6] = _dumo_kopfUwDi
-end
+local SliderBarCorner = Instance.new("UICorner")
+SliderBarCorner.CornerRadius = UDim.new(1, 0)
+SliderBarCorner.Parent = SliderBar
 
-local function _vyn_fjorBqu5(_jin_xethEsTM, _bhai_shuurgB6)
-    while _jin_xethEsTM do
-        if _jin_xethEsTM.decl[_bhai_shuurgB6] then return _jin_xethEsTM end
-        _jin_xethEsTM = _jin_xethEsTM.parent
+local SliderFill = Instance.new("Frame")
+SliderFill.Size = UDim2.new(math.clamp(config.radius / 200, 0, 1), 0, 1, 0)
+SliderFill.BackgroundColor3 = Color3.fromRGB(0, 204, 204)
+SliderFill.BorderSizePixel = 0
+SliderFill.Parent = SliderBar
+
+local SliderFillCorner = Instance.new("UICorner")
+SliderFillCorner.CornerRadius = UDim.new(1, 0)
+SliderFillCorner.Parent = SliderFill
+
+local SliderButton = Instance.new("TextButton")
+SliderButton.Size = UDim2.new(0, 18, 0, 18)
+SliderButton.Position = UDim2.new(math.clamp(config.radius / 200, 0, 1), -9, 0.5, -9)
+SliderButton.Text = ""
+SliderButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SliderButton.Parent = SliderBar
+
+local SliderButtonCorner = Instance.new("UICorner")
+SliderButtonCorner.CornerRadius = UDim.new(1, 0)
+SliderButtonCorner.Parent = SliderButton
+
+local draggingSlider = false
+SliderButton.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        draggingSlider = true
     end
-    return nil
+end)
+
+UserInputService.InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        draggingSlider = false
+        saveConfig()
+    end
+end)
+
+UserInputService.InputChanged:Connect(function(input)
+    if draggingSlider and (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+        local mousePos = UserInputService:GetMouseLocation().X
+        local barPos = SliderBar.AbsolutePosition.X
+        local barSize = SliderBar.AbsoluteSize.X
+        local percentage = math.clamp((mousePos - barPos) / barSize, 0, 1)
+        
+        config.radius = math.floor(percentage * 200)
+        SliderFill.Size = UDim2.new(percentage, 0, 1, 0)
+        SliderButton.Position = UDim2.new(percentage, -9, 0.5, -9)
+        RadiusLabel.Text = "Radius: " .. tostring(config.radius)
+    end
+end)
+
+local HeightLabel = Instance.new("TextLabel")
+HeightLabel.Size = UDim2.new(1, 0, 0, 20)
+HeightLabel.Position = UDim2.new(0, 0, 0, 188)
+HeightLabel.Text = "Height: " .. tostring(config.height)
+HeightLabel.TextColor3 = Color3.fromRGB(180, 180, 190)
+HeightLabel.BackgroundTransparency = 1
+HeightLabel.Font = Enum.Font.Gotham
+HeightLabel.TextSize = 11
+HeightLabel.TextXAlignment = Enum.TextXAlignment.Left
+HeightLabel.Parent = ContentFrame
+
+local HeightBar = Instance.new("Frame")
+HeightBar.Size = UDim2.new(1, 0, 0, 10)
+HeightBar.Position = UDim2.new(0, 0, 0, 214)
+HeightBar.BackgroundColor3 = Color3.fromRGB(35, 35, 45)
+HeightBar.BorderSizePixel = 0
+HeightBar.Parent = ContentFrame
+
+local HeightBarCorner = Instance.new("UICorner")
+HeightBarCorner.CornerRadius = UDim.new(1, 0)
+HeightBarCorner.Parent = HeightBar
+
+local HeightFill = Instance.new("Frame")
+HeightFill.Size = UDim2.new(math.clamp(config.height / 100, 0, 1), 0, 1, 0)
+HeightFill.BackgroundColor3 = Color3.fromRGB(0, 204, 204)
+HeightFill.BorderSizePixel = 0
+HeightFill.Parent = HeightBar
+
+local HeightFillCorner = Instance.new("UICorner")
+HeightFillCorner.CornerRadius = UDim.new(1, 0)
+HeightFillCorner.Parent = HeightFill
+
+local HeightButton = Instance.new("TextButton")
+HeightButton.Size = UDim2.new(0, 18, 0, 18)
+HeightButton.Position = UDim2.new(math.clamp(config.height / 100, 0, 1), -9, 0.5, -9)
+HeightButton.Text = ""
+HeightButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+HeightButton.Parent = HeightBar
+
+local HeightButtonCorner = Instance.new("UICorner")
+HeightButtonCorner.CornerRadius = UDim.new(1, 0)
+HeightButtonCorner.Parent = HeightButton
+
+local draggingHeight = false
+HeightButton.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        draggingHeight = true
+    end
+end)
+
+UserInputService.InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        draggingHeight = false
+        saveConfig()
+    end
+end)
+
+UserInputService.InputChanged:Connect(function(input)
+    if draggingHeight and (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+        local mousePos = UserInputService:GetMouseLocation().X
+        local barPos = HeightBar.AbsolutePosition.X
+        local barSize = HeightBar.AbsoluteSize.X
+        local percentage = math.clamp((mousePos - barPos) / barSize, 0, 1)
+        
+        config.height = math.floor(percentage * 100)
+        HeightFill.Size = UDim2.new(percentage, 0, 1, 0)
+        HeightButton.Position = UDim2.new(percentage, -9, 0.5, -9)
+        HeightLabel.Text = "Height: " .. tostring(config.height)
+    end
+end)
+
+local function isValidPart(part)
+    if not part:IsA("BasePart") or part.Anchored then return false end
+    
+    local character = LocalPlayer.Character
+    if character then
+        if part:IsDescendantOf(character) then
+            return false
+        end
+    end
+    
+    local model = part:FindFirstAncestorOfClass("Model")
+    if model then
+        if Players:GetPlayerFromCharacter(model) then
+            return false
+        end
+    end
+    
+    return true
 end
 
-local function _luna_dumo1KoE(_jin_xethEsTM, _bhai_shuurgB6)
-    local _sol_qethid35 = _vyn_fjorBqu5(_jin_xethEsTM, _bhai_shuurgB6)
-    if _sol_qethid35 then return _sol_qethid35.vars[_bhai_shuurgB6] end
-    return _amzi_hoda0Oku[_bhai_shuurgB6]
+local flingingParts = {}
+
+local function setupTornadoTouch(part)
+    if flingingParts[part] then return end
+    flingingParts[part] = true
+    
+    part.Touched:Connect(function(hit)
+        if not config.enabled or config.orbitPattern ~= "tornadov1" then return end
+        local character = hit.Parent
+        local humanoid = character:FindFirstChildOfClass("Humanoid")
+        if humanoid then
+            local rootPart = character:FindFirstChild("HumanoidRootPart")
+            if rootPart and rootPart ~= (LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("HumanoidRootPart")) then
+                pcall(function()
+                    rootPart.Velocity = Vector3.new(math.random(-150, 150), 300, math.random(-150, 150))
+                end)
+            end
+        end
+    end)
 end
 
-local function _mora_pyraoOfW(_jin_xethEsTM, _bhai_shuurgB6, _dumo_kopfUwDi)
-    local _sol_qethid35 = _vyn_fjorBqu5(_jin_xethEsTM, _bhai_shuurgB6)
-    if _sol_qethid35 then
-        _sol_qethid35.vars[_bhai_shuurgB6] = _dumo_kopfUwDi
+local function addPart(part)
+    if isValidPart(part) then
+        trackedParts[part] = true
+        setupTornadoTouch(part)
+    end
+    
+    part.Changed:Connect(function(property)
+        if property == "Anchored" or property == "Parent" then
+            if isValidPart(part) then
+                trackedParts[part] = true
+                setupTornadoTouch(part)
+            else
+                trackedParts[part] = nil
+            end
+        end
+    end)
+end
+
+task.spawn(function()
+    for _, part in pairs(workspace:GetDescendants()) do
+        addPart(part)
+    end
+end)
+
+workspace.DescendantAdded:Connect(addPart)
+workspace.DescendantRemoving:Connect(function(part)
+    trackedParts[part] = nil
+end)
+
+local function calculateOrbitPosition(partPos, targetCenter, time, part, index)
+    local targetPos
+    local speedMultiplier = config.superSpin and 5 or 1
+    local effectiveSpeed = config.rotationSpeed * speedMultiplier
+    
+    if config.orbitPattern == "still" then
+        local angle = math.atan2(partPos.Z - targetCenter.Z, partPos.X - targetCenter.X)
+        targetPos = Vector3.new(
+            targetCenter.X + math.cos(angle) * config.radius,
+            targetCenter.Y + config.height,
+            targetCenter.Z + math.sin(angle) * config.radius
+        )
+    elseif config.orbitPattern == "blackholeswallowv1" then
+        if part and part.Parent then
+            targetPos = part.Position
+        else
+            targetPos = targetCenter
+        end
+    elseif config.orbitPattern == "tornadov1" then
+        local angleIncrement = math.rad(effectiveSpeed * 2)
+        local baseAngle = (index * 0.5) + (time * 5)
+        local funnelRadius = math.clamp((partPos.Y - targetCenter.Y) * 0.3, 5, config.radius)
+        targetPos = Vector3.new(
+            targetCenter.X + math.cos(baseAngle) * funnelRadius,
+            targetCenter.Y + config.height + ((index * 2) % 40),
+            targetCenter.Z + math.sin(baseAngle) * funnelRadius
+        )
     else
-        _amzi_hoda0Oku[_bhai_shuurgB6] = _dumo_kopfUwDi
-    end
-end
-
-local function _dyl_lunaBhtj(_jin_xethEsTM)
-    while _jin_xethEsTM do
-        if _jin_xethEsTM.va then return _jin_xethEsTM.va end
-        _jin_xethEsTM = _jin_xethEsTM.parent
-    end
-    return { n = 0 }
-end
-
-_jin_pyraD0FH = function(_okra_lunaSjJJ, _jin_xethEsTM)
-    local _luna_zhuppln, n = {}, 0
-    local _tovo_miraoE62 = #_okra_lunaSjJJ
-    for _zhu_ogun0ERU = 1, _tovo_miraoE62 do
-        local _ogun_ryuuRTt4 = _okra_lunaSjJJ[_zhu_ogun0ERU]
-        if _zhu_ogun0ERU == _tovo_miraoE62 then
-            local _dyl_miraSbBG = _gato_tovoNjQq(_ogun_ryuuRTt4, _jin_xethEsTM)
-            for _dumo_ogunTBfk = 1, _dyl_miraSbBG.n do _luna_zhuppln[n + _dumo_ogunTBfk] = _dyl_miraSbBG[_dumo_ogunTBfk] end
-            n = n + _dyl_miraSbBG.n
+        local angleIncrement = math.rad(effectiveSpeed)
+        local angle = math.atan2(partPos.Z - targetCenter.Z, partPos.X - targetCenter.X)
+        local newAngle = angle + angleIncrement
+        
+        if config.orbitPattern == "circle" then
+            targetPos = Vector3.new(targetCenter.X + math.cos(newAngle) * config.radius, targetCenter.Y + config.height, targetCenter.Z + math.sin(newAngle) * config.radius)
+        elseif config.orbitPattern == "ellipse" then
+            targetPos = Vector3.new(targetCenter.X + math.cos(newAngle) * config.radius, targetCenter.Y + config.height, targetCenter.Z + math.sin(newAngle) * config.radius * config.ellipseRatio)
+        elseif config.orbitPattern == "figure8" then
+            targetPos = Vector3.new(targetCenter.X + math.sin(newAngle) * config.radius, targetCenter.Y + config.height, targetCenter.Z + math.sin(newAngle * 2) * config.radius * config.figure8Scale)
+        elseif config.orbitPattern == "spiral" then
+            local spiralRadius = config.radius + (time % 10) * config.spiralGrowth
+            targetPos = Vector3.new(targetCenter.X + math.cos(newAngle) * spiralRadius, targetCenter.Y + config.height, targetCenter.Z + math.sin(newAngle) * spiralRadius)
+        elseif config.orbitPattern == "helix" then
+            local helixHeight = config.height + math.sin(newAngle * 2) * 20
+            targetPos = Vector3.new(targetCenter.X + math.cos(newAngle) * config.radius, targetCenter.Y + helixHeight, targetCenter.Z + math.sin(newAngle) * config.radius)
+        elseif config.orbitPattern == "blackhole" then
+            local currentDist = (Vector3.new(partPos.X, targetCenter.Y, partPos.Z) - targetCenter).Magnitude
+            local vortexRadius = math.max(5, (currentDist * 0.95))
+            targetPos = Vector3.new(
+                targetCenter.X + math.cos(newAngle) * vortexRadius,
+                targetCenter.Y + config.height + math.sin(time * 5) * 5,
+                targetCenter.Z + math.sin(newAngle) * vortexRadius
+            )
         else
-            n = n + 1
-            _luna_zhuppln[n] = _dumo_hodanl3V(_ogun_ryuuRTt4, _jin_xethEsTM)
+            targetPos = Vector3.new(targetCenter.X + math.cos(newAngle) * config.radius, targetCenter.Y + config.height, targetCenter.Z + math.sin(newAngle) * config.radius)
         end
     end
-    _luna_zhuppln.n = n
-    return _luna_zhuppln
+    
+    return targetPos
 end
 
-_gato_tovoNjQq = function(_mora_uzleA4YF, _jin_xethEsTM)
-    local _ilo_hodarCjm = _mora_uzleA4YF[1]
-    if _ilo_hodarCjm == 234 or _ilo_hodarCjm == 77 then
-        return _bhai_amziGsJv(_mora_uzleA4YF, _jin_xethEsTM)
-    elseif _ilo_hodarCjm == 112 then
-        local va = _dyl_lunaBhtj(_jin_xethEsTM)
-        local _luna_zhuppln = { n = va.n }
-        for _dumo_ogunTBfk = 1, va.n do _luna_zhuppln[_dumo_ogunTBfk] = va[_dumo_ogunTBfk] end
-        return _luna_zhuppln
-    end
-    return { n = 1, _dumo_hodanl3V(_mora_uzleA4YF, _jin_xethEsTM) }
-end
-
-_ogun_amziQezo = function(_mora_uzleA4YF, _jin_xethEsTM)
-    local _ryuu_kopfzOEP = _mora_uzleA4YF[2]
-    if _ryuu_kopfzOEP == 150 then
-        local _hoda_okraA8w9 = _dumo_hodanl3V(_mora_uzleA4YF[3], _jin_xethEsTM)
-        if not _hoda_okraA8w9 then return _hoda_okraA8w9 end
-        return _dumo_hodanl3V(_mora_uzleA4YF[4], _jin_xethEsTM)
-    elseif _ryuu_kopfzOEP == 65 then
-        local _hoda_okraA8w9 = _dumo_hodanl3V(_mora_uzleA4YF[3], _jin_xethEsTM)
-        if _hoda_okraA8w9 then return _hoda_okraA8w9 end
-        return _dumo_hodanl3V(_mora_uzleA4YF[4], _jin_xethEsTM)
-    end
-    local _hoda_okraA8w9 = _dumo_hodanl3V(_mora_uzleA4YF[3], _jin_xethEsTM)
-    local _kiri_ryuuEPAB = _dumo_hodanl3V(_mora_uzleA4YF[4], _jin_xethEsTM)
-    if _ryuu_kopfzOEP == 80 then return _hoda_okraA8w9 + _kiri_ryuuEPAB
-    elseif _ryuu_kopfzOEP == 75 then return _hoda_okraA8w9 - _kiri_ryuuEPAB
-    elseif _ryuu_kopfzOEP == 99 then return _hoda_okraA8w9 * _kiri_ryuuEPAB
-    elseif _ryuu_kopfzOEP == 27 then return _hoda_okraA8w9 / _kiri_ryuuEPAB
-    elseif _ryuu_kopfzOEP == 113 then return _hoda_okraA8w9 % _kiri_ryuuEPAB
-    elseif _ryuu_kopfzOEP == 5 then return _hoda_okraA8w9 ^ _kiri_ryuuEPAB
-    elseif _ryuu_kopfzOEP == 190 then return math.floor(_hoda_okraA8w9 / _kiri_ryuuEPAB)
-    elseif _ryuu_kopfzOEP == 191 then return _hoda_okraA8w9 .. _kiri_ryuuEPAB
-    elseif _ryuu_kopfzOEP == 181 then return _hoda_okraA8w9 == _kiri_ryuuEPAB
-    elseif _ryuu_kopfzOEP == 211 then return _hoda_okraA8w9 ~= _kiri_ryuuEPAB
-    elseif _ryuu_kopfzOEP == 183 then return _hoda_okraA8w9 < _kiri_ryuuEPAB
-    elseif _ryuu_kopfzOEP == 110 then return _hoda_okraA8w9 <= _kiri_ryuuEPAB
-    elseif _ryuu_kopfzOEP == 128 then return _hoda_okraA8w9 > _kiri_ryuuEPAB
-    elseif _ryuu_kopfzOEP == 231 then return _hoda_okraA8w9 >= _kiri_ryuuEPAB
-    end
-    error((string.char(98,97,100,32,111,112,101,114,97,116,111,114)))
-end
-
-_amzi_shuuBgZq = function(_mora_uzleA4YF, _jin_xethEsTM)
-    local _ryuu_kopfzOEP = _mora_uzleA4YF[2]
-    local _hoda_okraA8w9 = _dumo_hodanl3V(_mora_uzleA4YF[3], _jin_xethEsTM)
-    if _ryuu_kopfzOEP == 30 then return -_hoda_okraA8w9
-    elseif _ryuu_kopfzOEP == 48 then return not _hoda_okraA8w9
-    elseif _ryuu_kopfzOEP == 34 then return #_hoda_okraA8w9
-    end
-    error((string.char(98,97,100,32,117,110,97,114,121,32,111,112,101,114,97,116,111,114)))
-end
-
-_uzle_ryuuDhoq = function(_mora_uzleA4YF, _jin_xethEsTM)
-    local _tsa_okraV9uN = _mora_uzleA4YF[2]
-    local _ryuu_kiriP0pb, _sol_uzlecQgV = {}, 0
-    local _tovo_miraoE62 = #_tsa_okraV9uN
-    for _zhu_ogun0ERU = 1, _tovo_miraoE62 do
-        local _gato_pyravDXT = _tsa_okraV9uN[_zhu_ogun0ERU]
-        local _jin_hodao1ff = _gato_pyravDXT[1]
-        if _jin_hodao1ff == 118 then
-            if _zhu_ogun0ERU == _tovo_miraoE62 then
-                local _dyl_miraSbBG = _gato_tovoNjQq(_gato_pyravDXT[2], _jin_xethEsTM)
-                for _dumo_ogunTBfk = 1, _dyl_miraSbBG.n do
-                    _sol_uzlecQgV = _sol_uzlecQgV + 1
-                    _ryuu_kiriP0pb[_sol_uzlecQgV] = _dyl_miraSbBG[_dumo_ogunTBfk]
-                end
-            else
-                _sol_uzlecQgV = _sol_uzlecQgV + 1
-                _ryuu_kiriP0pb[_sol_uzlecQgV] = _dumo_hodanl3V(_gato_pyravDXT[2], _jin_xethEsTM)
-            end
-        elseif _jin_hodao1ff == 104 then
-            _ryuu_kiriP0pb[_nyx_kopf2NCo[_gato_pyravDXT[2]]] = _dumo_hodanl3V(_gato_pyravDXT[3], _jin_xethEsTM)
+RunService.Heartbeat:Connect(function(dt)
+    if not config.enabled then return end
+    
+    pcall(function()
+        sethiddenproperty(LocalPlayer, "SimulationRadius", math.huge)
+    end)
+    
+    local targetCenter
+    if config.followMouse then
+        local mouseLocation = UserInputService:GetMouseLocation()
+        local unitRay = Camera:ScreenPointToRay(mouseLocation.X, mouseLocation.Y)
+        
+        local raycastParams = RaycastParams.new()
+        raycastParams.FilterType = Enum.RaycastFilterType.Exclude
+        if LocalPlayer.Character then
+            raycastParams.FilterDescendantsInstances = {LocalPlayer.Character}
+        end
+        
+        local raycastResult = workspace:Raycast(unitRay.Origin, unitRay.Direction * 1000, raycastParams)
+        if raycastResult then
+            targetCenter = raycastResult.Position
         else
-            local _zhu_amziXatQ = _dumo_hodanl3V(_gato_pyravDXT[2], _jin_xethEsTM)
-            _ryuu_kiriP0pb[_zhu_amziXatQ] = _dumo_hodanl3V(_gato_pyravDXT[3], _jin_xethEsTM)
+            targetCenter = unitRay.Origin + (unitRay.Direction * 150)
+        end
+    else
+        local targetPlayer = config.targetPlayer or LocalPlayer
+        if targetPlayer.Character and targetPlayer.Character:FindFirstChild("HumanoidRootPart") then
+            targetCenter = targetPlayer.Character.HumanoidRootPart.Position
+        else
+            local hrp = LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+            if hrp then targetCenter = hrp.Position else return end
         end
     end
-    return _ryuu_kiriP0pb
-end
-
-_bhai_kopfMxya = function(_mora_uzleA4YF, _jin_xethEsTM)
-    local _mora_wabe6SDs, _uzle_veshx6Bt, _tsa_fjoribo7 = _mora_uzleA4YF[2], _mora_uzleA4YF[3], _mora_uzleA4YF[4]
-    return function(...)
-        local _dyl_xethB1Oz = _shuu_okracC5w(_jin_xethEsTM)
-        local _pyra_nyx8jjn = _luna_uzle17zu(...)
-        local _nyx_tsan6ou = #_mora_wabe6SDs
-        for _zhu_ogun0ERU = 1, _nyx_tsan6ou do
-            _amzi_sol6ozy(_dyl_xethB1Oz, _nyx_kopf2NCo[_mora_wabe6SDs[_zhu_ogun0ERU]], _pyra_nyx8jjn[_zhu_ogun0ERU])
-        end
-        if _uzle_veshx6Bt == 1 then
-            local va = { n = 0 }
-            for _zhu_ogun0ERU = _nyx_tsan6ou + 1, _pyra_nyx8jjn.n do
-                va.n = va.n + 1
-                va[va.n] = _pyra_nyx8jjn[_zhu_ogun0ERU]
+    
+    local currentTime = tick()
+    local index = 0
+    for part, _ in pairs(trackedParts) do
+        if part and part.Parent and not part.Anchored then
+            index = index + 1
+            local dist = (part.Position - targetCenter).Magnitude
+            if dist < 500 then
+                pcall(function()
+                    part.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0, 0, 0)
+                end)
+                
+                local targetPos = calculateOrbitPosition(part.Position, targetCenter, currentTime, part, index)
+                local direction = (targetPos - part.Position)
+                
+                local clampedVel = direction * 16
+                part.Velocity = Vector3.new(
+                    math.clamp(clampedVel.X, -160, 160),
+                    math.clamp(clampedVel.Y, -160, 160),
+                    math.clamp(clampedVel.Z, -160, 160)
+                )
             end
-            _dyl_xethB1Oz.va = va
-        end
-        local _vesh_amziN7gw, _dyl_xethZwE5 = _tovo_bhaiJVYk(_tsa_fjoribo7, _dyl_xethB1Oz)
-        if _vesh_amziN7gw == _qeth_wabesE9y then
-            return table.unpack(_dyl_xethZwE5, 1, _dyl_xethZwE5.n)
+        else
+            trackedParts[part] = nil
         end
     end
-end
+end)
 
-_bhai_amziGsJv = function(_mora_uzleA4YF, _jin_xethEsTM)
-    if _mora_uzleA4YF[1] == 234 then
-        local _sol_qethid35 = _dumo_hodanl3V(_mora_uzleA4YF[2], _jin_xethEsTM)
-        local _pyra_nyx8jjn = _jin_pyraD0FH(_mora_uzleA4YF[3], _jin_xethEsTM)
-        return _luna_uzle17zu(_sol_qethid35(table.unpack(_pyra_nyx8jjn, 1, _pyra_nyx8jjn.n)))
+local dragging, dragStart, startPos
+MainFrame.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        dragging = true
+        dragStart = input.Position
+        startPos = MainFrame.Position
     end
-    local _amzi_hodaxutf = _dumo_hodanl3V(_mora_uzleA4YF[2], _jin_xethEsTM)
-    local _sol_qethid35 = _amzi_hodaxutf[_nyx_kopf2NCo[_mora_uzleA4YF[3]]]
-    local _pyra_nyx8jjn = _jin_pyraD0FH(_mora_uzleA4YF[4], _jin_xethEsTM)
-    return _luna_uzle17zu(_sol_qethid35(_amzi_hodaxutf, table.unpack(_pyra_nyx8jjn, 1, _pyra_nyx8jjn.n)))
-end
+end)
 
-_dumo_hodanl3V = function(_mora_uzleA4YF, _jin_xethEsTM)
-    local _ilo_hodarCjm = _mora_uzleA4YF[1]
-    if _ilo_hodarCjm == 229 then return _mora_uzleA4YF[2]
-    elseif _ilo_hodarCjm == 58 then return _nyx_kopf2NCo[_mora_uzleA4YF[2]]
-    elseif _ilo_hodarCjm == 10 then return _luna_dumo1KoE(_jin_xethEsTM, _nyx_kopf2NCo[_mora_uzleA4YF[2]])
-    elseif _ilo_hodarCjm == 139 then return nil
-    elseif _ilo_hodarCjm == 246 then return true
-    elseif _ilo_hodarCjm == 37 then return false
-    elseif _ilo_hodarCjm == 6 then
-        local _amzi_hodaxutf = _dumo_hodanl3V(_mora_uzleA4YF[2], _jin_xethEsTM)
-        return _amzi_hodaxutf[_dumo_hodanl3V(_mora_uzleA4YF[3], _jin_xethEsTM)]
-    elseif _ilo_hodarCjm == 23 then return _dumo_hodanl3V(_mora_uzleA4YF[2], _jin_xethEsTM)
-    elseif _ilo_hodarCjm == 146 then return _bhai_kopfMxya(_mora_uzleA4YF, _jin_xethEsTM)
-    elseif _ilo_hodarCjm == 86 then return _uzle_ryuuDhoq(_mora_uzleA4YF, _jin_xethEsTM)
-    elseif _ilo_hodarCjm == 94 then return _ogun_amziQezo(_mora_uzleA4YF, _jin_xethEsTM)
-    elseif _ilo_hodarCjm == 162 then return _amzi_shuuBgZq(_mora_uzleA4YF, _jin_xethEsTM)
-    elseif _ilo_hodarCjm == 112 then return _dyl_lunaBhtj(_jin_xethEsTM)[1]
-    elseif _ilo_hodarCjm == 234 or _ilo_hodarCjm == 77 then return _bhai_amziGsJv(_mora_uzleA4YF, _jin_xethEsTM)[1]
+UserInputService.InputChanged:Connect(function(input)
+    if dragging and (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+        local delta = input.Position - dragStart
+        MainFrame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
     end
-    error((string.char(98,97,100,32,101,120,112,114,101,115,115,105,111,110,32,110,111,100,101)))
-end
+end)
 
-_tovo_bhaiJVYk = function(_shuu_lunaRwfW, _jin_xethEsTM)
-    for _zhu_ogun0ERU = 1, #_shuu_lunaRwfW do
-        local _vesh_amziN7gw, _dyl_xethZwE5 = _vesh_gatokhmD(_shuu_lunaRwfW[_zhu_ogun0ERU], _jin_xethEsTM)
-        if _vesh_amziN7gw then return _vesh_amziN7gw, _dyl_xethZwE5 end
+UserInputService.InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        dragging = false
     end
-    return nil
-end
+end)
 
-_vesh_gatokhmD = function(_bhai_wabeGXAl, _jin_xethEsTM)
-    local _ilo_hodarCjm = _bhai_wabeGXAl[1]
-    if _ilo_hodarCjm == 95 then
-        local _jin_dumoIRcZ = _jin_pyraD0FH(_bhai_wabeGXAl[3], _jin_xethEsTM)
-        local _tovo_dumoXiEz = _bhai_wabeGXAl[2]
-        for _zhu_ogun0ERU = 1, #_tovo_dumoXiEz do
-            _amzi_sol6ozy(_jin_xethEsTM, _nyx_kopf2NCo[_tovo_dumoXiEz[_zhu_ogun0ERU]], _jin_dumoIRcZ[_zhu_ogun0ERU])
-        end
-    elseif _ilo_hodarCjm == 155 then
-        local _bhai_shuurgB6 = _nyx_kopf2NCo[_bhai_wabeGXAl[2]]
-        _amzi_sol6ozy(_jin_xethEsTM, _bhai_shuurgB6, nil)
-        _jin_xethEsTM.vars[_bhai_shuurgB6] = _bhai_kopfMxya(_bhai_wabeGXAl[3], _jin_xethEsTM)
-    elseif _ilo_hodarCjm == 39 then
-        local _kiri_fjorw8pW = _bhai_wabeGXAl[2]
-        local _jin_dumoIRcZ = _jin_pyraD0FH(_bhai_wabeGXAl[3], _jin_xethEsTM)
-        for _zhu_ogun0ERU = 1, #_kiri_fjorw8pW do
-            local _ryuu_kiriP0pb = _kiri_fjorw8pW[_zhu_ogun0ERU]
-            if _ryuu_kiriP0pb[1] == 10 then
-                _mora_pyraoOfW(_jin_xethEsTM, _nyx_kopf2NCo[_ryuu_kiriP0pb[2]], _jin_dumoIRcZ[_zhu_ogun0ERU])
-            else
-                local _amzi_hodaxutf = _dumo_hodanl3V(_ryuu_kiriP0pb[2], _jin_xethEsTM)
-                _amzi_hodaxutf[_dumo_hodanl3V(_ryuu_kiriP0pb[3], _jin_xethEsTM)] = _jin_dumoIRcZ[_zhu_ogun0ERU]
-            end
-        end
-    elseif _ilo_hodarCjm == 161 then
-        _bhai_amziGsJv(_bhai_wabeGXAl[2], _jin_xethEsTM)
-    elseif _ilo_hodarCjm == 52 then
-        return _tovo_bhaiJVYk(_bhai_wabeGXAl[2], _shuu_okracC5w(_jin_xethEsTM))
-    elseif _ilo_hodarCjm == 163 then
-        while _dumo_hodanl3V(_bhai_wabeGXAl[2], _jin_xethEsTM) do
-            local _vesh_amziN7gw, _dyl_xethZwE5 = _tovo_bhaiJVYk(_bhai_wabeGXAl[3], _shuu_okracC5w(_jin_xethEsTM))
-            if _vesh_amziN7gw == _dumo_wabeakfU then break end
-            if _vesh_amziN7gw then return _vesh_amziN7gw, _dyl_xethZwE5 end
-        end
-    elseif _ilo_hodarCjm == 212 then
-        while true do
-            local _uzle_vynaqvg = _shuu_okracC5w(_jin_xethEsTM)
-            local _vesh_amziN7gw, _dyl_xethZwE5 = _tovo_bhaiJVYk(_bhai_wabeGXAl[2], _uzle_vynaqvg)
-            if _vesh_amziN7gw == _dumo_wabeakfU then break end
-            if _vesh_amziN7gw then return _vesh_amziN7gw, _dyl_xethZwE5 end
-            if _dumo_hodanl3V(_bhai_wabeGXAl[3], _uzle_vynaqvg) then break end
-        end
-    elseif _ilo_hodarCjm == 198 then
-        local _fjor_vynUk55 = _bhai_wabeGXAl[2]
-        for _zhu_ogun0ERU = 1, #_fjor_vynUk55 do
-            local _kiri_jinGynA = _fjor_vynUk55[_zhu_ogun0ERU]
-            if _dumo_hodanl3V(_kiri_jinGynA[1], _jin_xethEsTM) then
-                return _tovo_bhaiJVYk(_kiri_jinGynA[2], _shuu_okracC5w(_jin_xethEsTM))
-            end
-        end
-        if _bhai_wabeGXAl[3] then
-            return _tovo_bhaiJVYk(_bhai_wabeGXAl[3], _shuu_okracC5w(_jin_xethEsTM))
-        end
-    elseif _ilo_hodarCjm == 124 then
-        local _bhai_shuurgB6 = _nyx_kopf2NCo[_bhai_wabeGXAl[2]]
-        local _pyra_xethlnpI = _dumo_hodanl3V(_bhai_wabeGXAl[3], _jin_xethEsTM)
-        local _jin_tovojgEw = _dumo_hodanl3V(_bhai_wabeGXAl[4], _jin_xethEsTM)
-        local _amzi_wabeJTcj = 1
-        if _bhai_wabeGXAl[5] then _amzi_wabeJTcj = _dumo_hodanl3V(_bhai_wabeGXAl[5], _jin_xethEsTM) end
-        for _zhu_ogun0ERU = _pyra_xethlnpI, _jin_tovojgEw, _amzi_wabeJTcj do
-            local _uzle_vynaqvg = _shuu_okracC5w(_jin_xethEsTM)
-            _amzi_sol6ozy(_uzle_vynaqvg, _bhai_shuurgB6, _zhu_ogun0ERU)
-            local _vesh_amziN7gw, _dyl_xethZwE5 = _tovo_bhaiJVYk(_bhai_wabeGXAl[6], _uzle_vynaqvg)
-            if _vesh_amziN7gw == _dumo_wabeakfU then break end
-            if _vesh_amziN7gw then return _vesh_amziN7gw, _dyl_xethZwE5 end
-        end
-    elseif _ilo_hodarCjm == 132 then
-        local _tovo_dumoXiEz = _bhai_wabeGXAl[2]
-        local _kiri_fjorzBjM = _jin_pyraD0FH(_bhai_wabeGXAl[3], _jin_xethEsTM)
-        local _sol_qethid35, _pyra_xethlnpI, _ogun_okralNQO = _kiri_fjorzBjM[1], _kiri_fjorzBjM[2], _kiri_fjorzBjM[3]
-        while true do
-            local _dyl_tsaRtpE = _luna_uzle17zu(_sol_qethid35(_pyra_xethlnpI, _ogun_okralNQO))
-            if _dyl_tsaRtpE[1] == nil then break end
-            _ogun_okralNQO = _dyl_tsaRtpE[1]
-            local _uzle_vynaqvg = _shuu_okracC5w(_jin_xethEsTM)
-            for _zhu_ogun0ERU = 1, #_tovo_dumoXiEz do
-                _amzi_sol6ozy(_uzle_vynaqvg, _nyx_kopf2NCo[_tovo_dumoXiEz[_zhu_ogun0ERU]], _dyl_tsaRtpE[_zhu_ogun0ERU])
-            end
-            local _vesh_amziN7gw, _dyl_xethZwE5 = _tovo_bhaiJVYk(_bhai_wabeGXAl[4], _uzle_vynaqvg)
-            if _vesh_amziN7gw == _dumo_wabeakfU then break end
-            if _vesh_amziN7gw then return _vesh_amziN7gw, _dyl_xethZwE5 end
-        end
-    elseif _ilo_hodarCjm == 122 then
-        return _qeth_wabesE9y, _jin_pyraD0FH(_bhai_wabeGXAl[2], _jin_xethEsTM)
-    elseif _ilo_hodarCjm == 220 then
-        return _dumo_wabeakfU
+local minimized = false
+MinimizeButton.MouseButton1Click:Connect(function()
+    minimized = not minimized
+    if minimized then
+        MainFrame:TweenSize(UDim2.new(0, 290, 0, 36), "Out", "Quad", 0.3, true)
+        MinimizeButton.Text = "+"
+        ContentFrame.Visible = false
+    else
+        MainFrame:TweenSize(UDim2.new(0, 290, 0, 460), "Out", "Quad", 0.3, true)
+        MinimizeButton.Text = "-"
+        ContentFrame.Visible = true
     end
-    return nil
-end
-
-local function _mira_shuu4GKB(...)
-    local _wabe_dumoaePV = _shuu_okracC5w(nil)
-    _wabe_dumoaePV.va = _luna_uzle17zu(...)
-    local _vesh_amziN7gw, _dyl_xethZwE5 = _tovo_bhaiJVYk({{95,{1},{{77,{10,2},3,{{58,1}}}}},{95,{4},{{77,{10,2},3,{{58,4}}}}},{95,{5},{{77,{10,2},3,{{58,5}}}}},{95,{6},{{77,{10,2},3,{{58,6}}}}},{95,{7},{{6,{10,1},{58,7}}}},{95,{8},{{77,{10,7},9,{}}}},{95,{10},{{6,{10,11},{58,12}}}},{95,{13},{{234,{6,{10,14},{58,15}},{{58,13}}}}},{39,{{6,{10,13},{58,16}}},{{58,17}}},{39,{{6,{10,13},{58,18}}},{{37}}},{39,{{6,{10,13},{58,19}}},{{77,{10,7},20,{{58,21}}}}},{95,{22},{{234,{6,{10,14},{58,15}},{{58,23}}}}},{39,{{6,{10,22},{58,24}}},{{234,{6,{10,25},{58,15}},{{229,0},{229,290},{229,0},{229,460}}}}},{39,{{6,{10,22},{58,26}}},{{234,{6,{10,25},{58,15}},{{229,0.5},{162,30,{229,145}},{229,0.5},{162,30,{229,230}}}}}},{39,{{6,{10,22},{58,27}}},{{234,{6,{10,28},{58,29}},{{229,24},{229,24},{229,32}}}}},{39,{{6,{10,22},{58,30}}},{{229,0}}},{39,{{6,{10,22},{58,19}}},{{10,13}}},{95,{31},{{234,{6,{10,14},{58,15}},{{58,31}}}}},{39,{{6,{10,31},{58,32}}},{{234,{6,{10,33},{58,15}},{{229,0},{229,12}}}}},{39,{{6,{10,31},{58,19}}},{{10,22}}},{95,{34},{{234,{6,{10,14},{58,15}},{{58,34}}}}},{39,{{6,{10,34},{58,35}}},{{234,{6,{10,28},{58,29}},{{229,0},{229,204},{229,204}}}}},{39,{{6,{10,34},{58,36}}},{{229,0.5}}},{39,{{6,{10,34},{58,37}}},{{229,1.5}}},{39,{{6,{10,34},{58,19}}},{{10,22}}},{95,{38},{{234,{6,{10,14},{58,15}},{{58,39}}}}},{39,{{6,{10,38},{58,24}}},{{234,{6,{10,25},{58,15}},{{229,1},{162,30,{229,64}},{229,0},{229,32}}}}},{39,{{6,{10,38},{58,26}}},{{234,{6,{10,25},{58,15}},{{229,0},{229,4},{229,0},{229,4}}}}},{39,{{6,{10,38},{58,40}}},{{58,41}}},{39,{{6,{10,38},{58,42}}},{{234,{6,{10,28},{58,29}},{{229,255},{229,255},{229,255}}}}},{39,{{6,{10,38},{58,27}}},{{234,{6,{10,28},{58,29}},{{229,0},{229,204},{229,204}}}}},{39,{{6,{10,38},{58,43}}},{{6,{6,{10,44},{58,43}},{58,45}}}},{39,{{6,{10,38},{58,46}}},{{229,13}}},{39,{{6,{10,38},{58,19}}},{{10,22}}},{95,{47},{{234,{6,{10,14},{58,15}},{{58,31}}}}},{39,{{6,{10,47},{58,32}}},{{234,{6,{10,33},{58,15}},{{229,0},{229,8}}}}},{39,{{6,{10,47},{58,19}}},{{10,38}}},{95,{48},{{234,{6,{10,14},{58,15}},{{58,49}}}}},{39,{{6,{10,48},{58,24}}},{{234,{6,{10,25},{58,15}},{{229,0},{229,26},{229,0},{229,26}}}}},{39,{{6,{10,48},{58,26}}},{{234,{6,{10,25},{58,15}},{{229,1},{162,30,{229,58}},{229,0},{229,7}}}}},{39,{{6,{10,48},{58,40}}},{{58,50}}},{39,{{6,{10,48},{58,27}}},{{234,{6,{10,28},{58,29}},{{229,255},{229,200},{229,50}}}}},{39,{{6,{10,48},{58,42}}},{{234,{6,{10,28},{58,29}},{{229,0},{229,0},{229,0}}}}},{39,{{6,{10,48},{58,43}}},{{6,{6,{10,44},{58,43}},{58,45}}}},{39,{{6,{10,48},{58,46}}},{{229,16}}},{39,{{6,{10,48},{58,19}}},{{10,22}}},{95,{51},{{234,{6,{10,14},{58,15}},{{58,31}}}}},{39,{{6,{10,51},{58,32}}},{{234,{6,{10,33},{58,15}},{{229,1},{229,0}}}}},{39,{{6,{10,51},{58,19}}},{{10,48}}},{95,{52},{{234,{6,{10,14},{58,15}},{{58,49}}}}},{39,{{6,{10,52},{58,24}}},{{234,{6,{10,25},{58,15}},{{229,0},{229,26},{229,0},{229,26}}}}},{39,{{6,{10,52},{58,26}}},{{234,{6,{10,25},{58,15}},{{229,1},{162,30,{229,29}},{229,0},{229,7}}}}},{39,{{6,{10,52},{58,40}}},{{58,53}}},{39,{{6,{10,52},{58,27}}},{{234,{6,{10,28},{58,29}},{{229,255},{229,60},{229,60}}}}},{39,{{6,{10,52},{58,42}}},{{234,{6,{10,28},{58,29}},{{229,255},{229,255},{229,255}}}}},{39,{{6,{10,52},{58,43}}},{{6,{6,{10,44},{58,43}},{58,45}}}},{39,{{6,{10,52},{58,46}}},{{229,14}}},{39,{{6,{10,52},{58,19}}},{{10,22}}},{95,{54},{{234,{6,{10,14},{58,15}},{{58,31}}}}},{39,{{6,{10,54},{58,32}}},{{234,{6,{10,33},{58,15}},{{229,1},{229,0}}}}},{39,{{6,{10,54},{58,19}}},{{10,52}}},{95,{55},{{234,{6,{10,14},{58,15}},{{58,23}}}}},{39,{{6,{10,55},{58,24}}},{{234,{6,{10,25},{58,15}},{{229,1},{162,30,{229,16}},{229,1},{162,30,{229,44}}}}}},{39,{{6,{10,55},{58,26}}},{{234,{6,{10,25},{58,15}},{{229,0},{229,8},{229,0},{229,38}}}}},{39,{{6,{10,55},{58,56}}},{{229,1}}},{39,{{6,{10,55},{58,19}}},{{10,22}}},{95,{57},{{86,{{104,58,{37}},{104,59,{229,50}},{104,60,{229,10}},{104,61,{229,10}},{104,62,{229,1000}},{104,63,{58,64}},{104,65,{37}},{104,66,{37}},{104,67,{139}},{104,68,{139}},{104,69,{58,70}},{104,71,{229,0.1}},{104,72,{229,0.6}},{104,73,{229,0.5}},{104,74,{229,5}},{104,75,{229,0.5}}}}}},{155,76,{146,{},0,{{161,{234,{10,77},{{146,{},0,{{161,{234,{10,78},{{58,79},{77,{10,6},80,{{10,57}}}}}}}}}}}}}},{95,{81},{{86,{}}}},{161,{77,{6,{10,52},{58,82}},83,{{146,{},0,{{39,{{6,{10,57},{58,58}}},{{37}}},{132,{84,85},{{234,{10,86},{{10,81}}}},{{198,{{{94,150,{94,150,{10,84},{6,{10,84},{58,19}}},{162,48,{6,{10,84},{58,87}}}},{{161,{234,{10,77},{{146,{},0,{{39,{{6,{10,84},{58,88}}},{{234,{6,{10,89},{58,15}},{{229,0},{229,0},{229,0}}}}},{39,{{6,{10,84},{58,90}}},{{234,{6,{10,89},{58,15}},{{229,0},{229,0},{229,0}}}}}}}}}}}}},false}}},{161,{77,{10,13},91,{}}}}}}}},{95,{92},{{86,{{104,70,{58,93}},{104,94,{58,95}},{104,96,{58,97}},{104,98,{58,99}},{104,100,{58,101}},{104,102,{58,103}},{104,104,{58,105}},{104,106,{58,107}},{104,108,{58,109}},{104,110,{58,111}},{104,112,{58,113}},{104,114,{58,115}},{104,116,{58,117}},{104,118,{58,119}}}}}},{95,{120},{{234,{6,{10,14},{58,15}},{{58,49}}}}},{39,{{6,{10,120},{58,24}}},{{234,{6,{10,25},{58,15}},{{229,0},{229,75},{229,0},{229,34}}}}},{39,{{6,{10,120},{58,26}}},{{234,{6,{10,25},{58,15}},{{229,0},{229,0},{229,0},{229,0}}}}},{39,{{6,{10,120},{58,40}}},{{94,65,{94,150,{6,{10,57},{58,58}},{58,121}},{58,122}}}},{39,{{6,{10,120},{58,27}}},{{94,65,{94,150,{6,{10,57},{58,58}},{234,{6,{10,28},{58,29}},{{229,50},{229,200},{229,100}}}},{234,{6,{10,28},{58,29}},{{229,220},{229,60},{229,60}}}}}},{39,{{6,{10,120},{58,42}}},{{234,{6,{10,28},{58,29}},{{229,255},{229,255},{229,255}}}}},{39,{{6,{10,120},{58,43}}},{{6,{6,{10,44},{58,43}},{58,45}}}},{39,{{6,{10,120},{58,46}}},{{229,11}}},{39,{{6,{10,120},{58,19}}},{{10,55}}},{95,{123},{{234,{6,{10,14},{58,15}},{{58,31}}}}},{39,{{6,{10,123},{58,32}}},{{234,{6,{10,33},{58,15}},{{229,0},{229,8}}}}},{39,{{6,{10,123},{58,19}}},{{10,120}}},{161,{77,{6,{10,120},{58,82}},83,{{146,{},0,{{39,{{6,{10,57},{58,58}}},{{162,48,{6,{10,57},{58,58}}}}},{39,{{6,{10,120},{58,40}}},{{94,65,{94,150,{6,{10,57},{58,58}},{58,121}},{58,122}}}},{39,{{6,{10,120},{58,27}}},{{94,65,{94,150,{6,{10,57},{58,58}},{234,{6,{10,28},{58,29}},{{229,50},{229,200},{229,100}}}},{234,{6,{10,28},{58,29}},{{229,220},{229,60},{229,60}}}}}},{161,{234,{10,76},{}}}}}}}},{95,{124},{{234,{6,{10,14},{58,15}},{{58,49}}}}},{39,{{6,{10,124},{58,24}}},{{234,{6,{10,25},{58,15}},{{229,1},{162,30,{229,83}},{229,0},{229,34}}}}},{39,{{6,{10,124},{58,26}}},{{234,{6,{10,25},{58,15}},{{229,0},{229,83},{229,0},{229,0}}}}},{39,{{6,{10,124},{58,40}}},{{94,65,{94,150,{6,{10,57},{58,65}},{58,125}},{58,126}}}},{39,{{6,{10,124},{58,27}}},{{94,65,{94,150,{6,{10,57},{58,65}},{234,{6,{10,28},{58,29}},{{229,0},{229,150},{229,200}}}},{234,{6,{10,28},{58,29}},{{229,45},{229,45},{229,55}}}}}},{39,{{6,{10,124},{58,42}}},{{234,{6,{10,28},{58,29}},{{229,255},{229,255},{229,255}}}}},{39,{{6,{10,124},{58,43}}},{{6,{6,{10,44},{58,43}},{58,45}}}},{39,{{6,{10,124},{58,46}}},{{229,11}}},{39,{{6,{10,124},{58,19}}},{{10,55}}},{95,{127},{{234,{6,{10,14},{58,15}},{{58,31}}}}},{39,{{6,{10,127},{58,32}}},{{234,{6,{10,33},{58,15}},{{229,0},{229,8}}}}},{39,{{6,{10,127},{58,19}}},{{10,124}}},{161,{77,{6,{10,124},{58,82}},83,{{146,{},0,{{39,{{6,{10,57},{58,65}}},{{162,48,{6,{10,57},{58,65}}}}},{39,{{6,{10,124},{58,40}}},{{94,65,{94,150,{6,{10,57},{58,65}},{58,125}},{58,126}}}},{39,{{6,{10,124},{58,27}}},{{94,65,{94,150,{6,{10,57},{58,65}},{234,{6,{10,28},{58,29}},{{229,0},{229,150},{229,200}}}},{234,{6,{10,28},{58,29}},{{229,45},{229,45},{229,55}}}}}},{161,{234,{10,76},{}}}}}}}},{95,{128},{{234,{6,{10,14},{58,15}},{{58,49}}}}},{39,{{6,{10,128},{58,24}}},{{234,{6,{10,25},{58,15}},{{229,1},{229,0},{229,0},{229,30}}}}},{39,{{6,{10,128},{58,26}}},{{234,{6,{10,25},{58,15}},{{229,0},{229,0},{229,0},{229,42}}}}},{39,{{6,{10,128},{58,40}}},{{94,65,{94,150,{6,{10,57},{58,66}},{58,129}},{58,130}}}},{39,{{6,{10,128},{58,27}}},{{94,65,{94,150,{6,{10,57},{58,66}},{234,{6,{10,28},{58,29}},{{229,255},{229,128},{229,0}}}},{234,{6,{10,28},{58,29}},{{229,45},{229,45},{229,55}}}}}},{39,{{6,{10,128},{58,42}}},{{234,{6,{10,28},{58,29}},{{229,255},{229,255},{229,255}}}}},{39,{{6,{10,128},{58,43}}},{{6,{6,{10,44},{58,43}},{58,45}}}},{39,{{6,{10,128},{58,46}}},{{229,11}}},{39,{{6,{10,128},{58,19}}},{{10,55}}},{95,{131},{{234,{6,{10,14},{58,15}},{{58,31}}}}},{39,{{6,{10,131},{58,32}}},{{234,{6,{10,33},{58,15}},{{229,0},{229,8}}}}},{39,{{6,{10,131},{58,19}}},{{10,128}}},{161,{77,{6,{10,128},{58,82}},83,{{146,{},0,{{39,{{6,{10,57},{58,66}}},{{162,48,{6,{10,57},{58,66}}}}},{39,{{6,{10,128},{58,40}}},{{94,65,{94,150,{6,{10,57},{58,66}},{58,129}},{58,130}}}},{39,{{6,{10,128},{58,27}}},{{94,65,{94,150,{6,{10,57},{58,66}},{234,{6,{10,28},{58,29}},{{229,255},{229,128},{229,0}}}},{234,{6,{10,28},{58,29}},{{229,45},{229,45},{229,55}}}}}},{161,{234,{10,76},{}}}}}}}},{95,{132},{{234,{6,{10,14},{58,15}},{{58,39}}}}},{39,{{6,{10,132},{58,24}}},{{234,{6,{10,25},{58,15}},{{229,0},{229,130},{229,0},{229,20}}}}},{39,{{6,{10,132},{58,26}}},{{234,{6,{10,25},{58,15}},{{229,0},{229,0},{229,0},{229,80}}}}},{39,{{6,{10,132},{58,40}}},{{58,133}}},{39,{{6,{10,132},{58,42}}},{{234,{6,{10,28},{58,29}},{{229,180},{229,180},{229,190}}}}},{39,{{6,{10,132},{58,56}}},{{229,1}}},{39,{{6,{10,132},{58,43}}},{{6,{6,{10,44},{58,43}},{58,134}}}},{39,{{6,{10,132},{58,46}}},{{229,11}}},{39,{{6,{10,132},{58,135}}},{{6,{6,{10,44},{58,135}},{58,136}}}},{39,{{6,{10,132},{58,19}}},{{10,55}}},{95,{137},{{234,{6,{10,14},{58,15}},{{58,49}}}}},{39,{{6,{10,137},{58,24}}},{{234,{6,{10,25},{58,15}},{{229,1},{229,0},{229,0},{229,30}}}}},{39,{{6,{10,137},{58,26}}},{{234,{6,{10,25},{58,15}},{{229,0},{229,0},{229,0},{229,102}}}}},{39,{{6,{10,137},{58,40}}},{{6,{10,92},{6,{10,57},{58,69}}}}},{39,{{6,{10,137},{58,27}}},{{234,{6,{10,28},{58,29}},{{229,35},{229,35},{229,45}}}}},{39,{{6,{10,137},{58,42}}},{{234,{6,{10,28},{58,29}},{{229,255},{229,255},{229,255}}}}},{39,{{6,{10,137},{58,43}}},{{6,{6,{10,44},{58,43}},{58,134}}}},{39,{{6,{10,137},{58,46}}},{{229,11}}},{39,{{6,{10,137},{58,138}}},{{229,10}}},{39,{{6,{10,137},{58,19}}},{{10,55}}},{95,{139},{{234,{6,{10,14},{58,15}},{{58,31}}}}},{39,{{6,{10,139},{58,32}}},{{234,{6,{10,33},{58,15}},{{229,0},{229,8}}}}},{39,{{6,{10,139},{58,19}}},{{10,137}}},{95,{140},{{234,{6,{10,14},{58,15}},{{58,141}}}}},{39,{{6,{10,140},{58,24}}},{{234,{6,{10,25},{58,15}},{{229,1},{229,0},{229,0},{229,140}}}}},{39,{{6,{10,140},{58,26}}},{{234,{6,{10,25},{58,15}},{{229,0},{229,0},{229,0},{229,136}}}}},{39,{{6,{10,140},{58,27}}},{{234,{6,{10,28},{58,29}},{{229,35},{229,35},{229,45}}}}},{39,{{6,{10,140},{58,30}}},{{229,0}}},{39,{{6,{10,140},{58,142}}},{{37}}},{39,{{6,{10,140},{58,143}}},{{229,4}}},{39,{{6,{10,140},{58,138}}},{{229,10}}},{39,{{6,{10,140},{58,19}}},{{10,55}}},{95,{144},{{234,{6,{10,14},{58,15}},{{58,31}}}}},{39,{{6,{10,144},{58,32}}},{{234,{6,{10,33},{58,15}},{{229,0},{229,8}}}}},{39,{{6,{10,144},{58,19}}},{{10,140}}},{95,{145},{{229,0}}},{132,{146,147},{{234,{10,86},{{10,92}}}},{{95,{148},{{234,{6,{10,14},{58,15}},{{58,49}}}}},{39,{{6,{10,148},{58,24}}},{{234,{6,{10,25},{58,15}},{{229,1},{162,30,{229,6}},{229,0},{229,24}}}}},{39,{{6,{10,148},{58,26}}},{{234,{6,{10,25},{58,15}},{{229,0},{229,3},{229,0},{10,145}}}}},{39,{{6,{10,148},{58,40}}},{{10,147}}},{39,{{6,{10,148},{58,27}}},{{234,{6,{10,28},{58,29}},{{229,45},{229,45},{229,55}}}}},{39,{{6,{10,148},{58,42}}},{{234,{6,{10,28},{58,29}},{{229,255},{229,255},{229,255}}}}},{39,{{6,{10,148},{58,43}}},{{6,{6,{10,44},{58,43}},{58,134}}}},{39,{{6,{10,148},{58,46}}},{{229,11}}},{39,{{6,{10,148},{58,138}}},{{229,10}}},{39,{{6,{10,148},{58,19}}},{{10,140}}},{95,{149},{{234,{6,{10,14},{58,15}},{{58,31}}}}},{39,{{6,{10,149},{58,32}}},{{234,{6,{10,33},{58,15}},{{229,0},{229,6}}}}},{39,{{6,{10,149},{58,19}}},{{10,148}}},{161,{77,{6,{10,148},{58,82}},83,{{146,{},0,{{39,{{6,{10,57},{58,69}}},{{10,146}}},{39,{{6,{10,137},{58,40}}},{{10,147}}},{39,{{6,{10,140},{58,142}}},{{37}}},{161,{234,{10,76},{}}}}}}}},{39,{{10,145}},{{94,80,{10,145},{229,26}}}}}},{39,{{6,{10,140},{58,150}}},{{234,{6,{10,25},{58,15}},{{229,0},{229,0},{229,0},{10,145}}}}},{161,{77,{6,{10,137},{58,82}},83,{{146,{},0,{{39,{{6,{10,140},{58,142}}},{{162,48,{6,{10,140},{58,142}}}}}}}}}},{95,{151},{{234,{6,{10,14},{58,15}},{{58,39}}}}},{39,{{6,{10,151},{58,24}}},{{234,{6,{10,25},{58,15}},{{229,1},{229,0},{229,0},{229,20}}}}},{39,{{6,{10,151},{58,26}}},{{234,{6,{10,25},{58,15}},{{229,0},{229,0},{229,0},{229,142}}}}},{39,{{6,{10,151},{58,40}}},{{94,191,{58,152},{234,{10,153},{{6,{10,57},{58,59}}}}}}},{39,{{6,{10,151},{58,42}}},{{234,{6,{10,28},{58,29}},{{229,180},{229,180},{229,190}}}}},{39,{{6,{10,151},{58,56}}},{{229,1}}},{39,{{6,{10,151},{58,43}}},{{6,{6,{10,44},{58,43}},{58,134}}}},{39,{{6,{10,151},{58,46}}},{{229,11}}},{39,{{6,{10,151},{58,135}}},{{6,{6,{10,44},{58,135}},{58,136}}}},{39,{{6,{10,151},{58,19}}},{{10,55}}},{95,{154},{{234,{6,{10,14},{58,15}},{{58,23}}}}},{39,{{6,{10,154},{58,24}}},{{234,{6,{10,25},{58,15}},{{229,1},{229,0},{229,0},{229,10}}}}},{39,{{6,{10,154},{58,26}}},{{234,{6,{10,25},{58,15}},{{229,0},{229,0},{229,0},{229,168}}}}},{39,{{6,{10,154},{58,27}}},{{234,{6,{10,28},{58,29}},{{229,35},{229,35},{229,45}}}}},{39,{{6,{10,154},{58,30}}},{{229,0}}},{39,{{6,{10,154},{58,19}}},{{10,55}}},{95,{155},{{234,{6,{10,14},{58,15}},{{58,31}}}}},{39,{{6,{10,155},{58,32}}},{{234,{6,{10,33},{58,15}},{{229,1},{229,0}}}}},{39,{{6,{10,155},{58,19}}},{{10,154}}},{95,{156},{{234,{6,{10,14},{58,15}},{{58,23}}}}},{39,{{6,{10,156},{58,24}}},{{234,{6,{10,25},{58,15}},{{234,{6,{10,157},{58,158}},{{94,27,{6,{10,57},{58,59}},{229,200}},{229,0},{229,1}}},{229,0},{229,1},{229,0}}}}},{39,{{6,{10,156},{58,27}}},{{234,{6,{10,28},{58,29}},{{229,0},{229,204},{229,204}}}}},{39,{{6,{10,156},{58,30}}},{{229,0}}},{39,{{6,{10,156},{58,19}}},{{10,154}}},{95,{159},{{234,{6,{10,14},{58,15}},{{58,31}}}}},{39,{{6,{10,159},{58,32}}},{{234,{6,{10,33},{58,15}},{{229,1},{229,0}}}}},{39,{{6,{10,159},{58,19}}},{{10,156}}},{95,{160},{{234,{6,{10,14},{58,15}},{{58,49}}}}},{39,{{6,{10,160},{58,24}}},{{234,{6,{10,25},{58,15}},{{229,0},{229,18},{229,0},{229,18}}}}},{39,{{6,{10,160},{58,26}}},{{234,{6,{10,25},{58,15}},{{234,{6,{10,157},{58,158}},{{94,27,{6,{10,57},{58,59}},{229,200}},{229,0},{229,1}}},{162,30,{229,9}},{229,0.5},{162,30,{229,9}}}}}},{39,{{6,{10,160},{58,40}}},{{58,161}}},{39,{{6,{10,160},{58,27}}},{{234,{6,{10,28},{58,29}},{{229,255},{229,255},{229,255}}}}},{39,{{6,{10,160},{58,19}}},{{10,154}}},{95,{162},{{234,{6,{10,14},{58,15}},{{58,31}}}}},{39,{{6,{10,162},{58,32}}},{{234,{6,{10,33},{58,15}},{{229,1},{229,0}}}}},{39,{{6,{10,162},{58,19}}},{{10,160}}},{95,{163},{{37}}},{161,{77,{6,{10,160},{58,164}},83,{{146,{165},0,{{198,{{{94,65,{94,181,{6,{10,165},{58,166}},{6,{6,{10,44},{58,166}},{58,167}}},{94,181,{6,{10,165},{58,166}},{6,{6,{10,44},{58,166}},{58,168}}}},{{39,{{10,163}},{{246}}}}}},false}}}}}},{161,{77,{6,{10,5},{58,169}},83,{{146,{165},0,{{198,{{{94,65,{94,181,{6,{10,165},{58,166}},{6,{6,{10,44},{58,166}},{58,167}}},{94,181,{6,{10,165},{58,166}},{6,{6,{10,44},{58,166}},{58,168}}}},{{39,{{10,163}},{{37}}},{161,{234,{10,76},{}}}}}},false}}}}}},{161,{77,{6,{10,5},{58,170}},83,{{146,{165},0,{{198,{{{94,150,{10,163},{23,{94,65,{94,181,{6,{10,165},{58,166}},{6,{6,{10,44},{58,166}},{58,171}}},{94,181,{6,{10,165},{58,166}},{6,{6,{10,44},{58,166}},{58,168}}}}}},{{95,{172},{{6,{77,{10,5},173,{}},{58,53}}}},{95,{174},{{6,{6,{10,154},{58,175}},{58,53}}}},{95,{176},{{6,{6,{10,154},{58,177}},{58,53}}}},{95,{178},{{234,{6,{10,157},{58,158}},{{94,27,{23,{94,75,{10,172},{10,174}}},{10,176}},{229,0},{229,1}}}}},{39,{{6,{10,57},{58,59}}},{{234,{6,{10,157},{58,179}},{{94,99,{10,178},{229,200}}}}}},{39,{{6,{10,156},{58,24}}},{{234,{6,{10,25},{58,15}},{{10,178},{229,0},{229,1},{229,0}}}}},{39,{{6,{10,160},{58,26}}},{{234,{6,{10,25},{58,15}},{{10,178},{162,30,{229,9}},{229,0.5},{162,30,{229,9}}}}}},{39,{{6,{10,151},{58,40}}},{{94,191,{58,152},{234,{10,153},{{6,{10,57},{58,59}}}}}}}}}},false}}}}}},{95,{180},{{234,{6,{10,14},{58,15}},{{58,39}}}}},{39,{{6,{10,180},{58,24}}},{{234,{6,{10,25},{58,15}},{{229,1},{229,0},{229,0},{229,20}}}}},{39,{{6,{10,180},{58,26}}},{{234,{6,{10,25},{58,15}},{{229,0},{229,0},{229,0},{229,188}}}}},{39,{{6,{10,180},{58,40}}},{{94,191,{58,181},{234,{10,153},{{6,{10,57},{58,60}}}}}}},{39,{{6,{10,180},{58,42}}},{{234,{6,{10,28},{58,29}},{{229,180},{229,180},{229,190}}}}},{39,{{6,{10,180},{58,56}}},{{229,1}}},{39,{{6,{10,180},{58,43}}},{{6,{6,{10,44},{58,43}},{58,134}}}},{39,{{6,{10,180},{58,46}}},{{229,11}}},{39,{{6,{10,180},{58,135}}},{{6,{6,{10,44},{58,135}},{58,136}}}},{39,{{6,{10,180},{58,19}}},{{10,55}}},{95,{182},{{234,{6,{10,14},{58,15}},{{58,23}}}}},{39,{{6,{10,182},{58,24}}},{{234,{6,{10,25},{58,15}},{{229,1},{229,0},{229,0},{229,10}}}}},{39,{{6,{10,182},{58,26}}},{{234,{6,{10,25},{58,15}},{{229,0},{229,0},{229,0},{229,214}}}}},{39,{{6,{10,182},{58,27}}},{{234,{6,{10,28},{58,29}},{{229,35},{229,35},{229,45}}}}},{39,{{6,{10,182},{58,30}}},{{229,0}}},{39,{{6,{10,182},{58,19}}},{{10,55}}},{95,{183},{{234,{6,{10,14},{58,15}},{{58,31}}}}},{39,{{6,{10,183},{58,32}}},{{234,{6,{10,33},{58,15}},{{229,1},{229,0}}}}},{39,{{6,{10,183},{58,19}}},{{10,182}}},{95,{184},{{234,{6,{10,14},{58,15}},{{58,23}}}}},{39,{{6,{10,184},{58,24}}},{{234,{6,{10,25},{58,15}},{{234,{6,{10,157},{58,158}},{{94,27,{6,{10,57},{58,60}},{229,100}},{229,0},{229,1}}},{229,0},{229,1},{229,0}}}}},{39,{{6,{10,184},{58,27}}},{{234,{6,{10,28},{58,29}},{{229,0},{229,204},{229,204}}}}},{39,{{6,{10,184},{58,30}}},{{229,0}}},{39,{{6,{10,184},{58,19}}},{{10,182}}},{95,{185},{{234,{6,{10,14},{58,15}},{{58,31}}}}},{39,{{6,{10,185},{58,32}}},{{234,{6,{10,33},{58,15}},{{229,1},{229,0}}}}},{39,{{6,{10,185},{58,19}}},{{10,184}}},{95,{186},{{234,{6,{10,14},{58,15}},{{58,49}}}}},{39,{{6,{10,186},{58,24}}},{{234,{6,{10,25},{58,15}},{{229,0},{229,18},{229,0},{229,18}}}}},{39,{{6,{10,186},{58,26}}},{{234,{6,{10,25},{58,15}},{{234,{6,{10,157},{58,158}},{{94,27,{6,{10,57},{58,60}},{229,100}},{229,0},{229,1}}},{162,30,{229,9}},{229,0.5},{162,30,{229,9}}}}}},{39,{{6,{10,186},{58,40}}},{{58,161}}},{39,{{6,{10,186},{58,27}}},{{234,{6,{10,28},{58,29}},{{229,255},{229,255},{229,255}}}}},{39,{{6,{10,186},{58,19}}},{{10,182}}},{95,{187},{{234,{6,{10,14},{58,15}},{{58,31}}}}},{39,{{6,{10,187},{58,32}}},{{234,{6,{10,33},{58,15}},{{229,1},{229,0}}}}},{39,{{6,{10,187},{58,19}}},{{10,186}}},{95,{188},{{37}}},{161,{77,{6,{10,186},{58,164}},83,{{146,{165},0,{{198,{{{94,65,{94,181,{6,{10,165},{58,166}},{6,{6,{10,44},{58,166}},{58,167}}},{94,181,{6,{10,165},{58,166}},{6,{6,{10,44},{58,166}},{58,168}}}},{{39,{{10,188}},{{246}}}}}},false}}}}}},{161,{77,{6,{10,5},{58,169}},83,{{146,{165},0,{{198,{{{94,65,{94,181,{6,{10,165},{58,166}},{6,{6,{10,44},{58,166}},{58,167}}},{94,181,{6,{10,165},{58,166}},{6,{6,{10,44},{58,166}},{58,168}}}},{{39,{{10,188}},{{37}}},{161,{234,{10,76},{}}}}}},false}}}}}},{161,{77,{6,{10,5},{58,170}},83,{{146,{165},0,{{198,{{{94,150,{10,188},{23,{94,65,{94,181,{6,{10,165},{58,166}},{6,{6,{10,44},{58,166}},{58,171}}},{94,181,{6,{10,165},{58,166}},{6,{6,{10,44},{58,166}},{58,168}}}}}},{{95,{172},{{6,{77,{10,5},173,{}},{58,53}}}},{95,{174},{{6,{6,{10,182},{58,175}},{58,53}}}},{95,{176},{{6,{6,{10,182},{58,177}},{58,53}}}},{95,{178},{{234,{6,{10,157},{58,158}},{{94,27,{23,{94,75,{10,172},{10,174}}},{10,176}},{229,0},{229,1}}}}},{39,{{6,{10,57},{58,60}}},{{234,{6,{10,157},{58,179}},{{94,99,{10,178},{229,100}}}}}},{39,{{6,{10,184},{58,24}}},{{234,{6,{10,25},{58,15}},{{10,178},{229,0},{229,1},{229,0}}}}},{39,{{6,{10,186},{58,26}}},{{234,{6,{10,25},{58,15}},{{10,178},{162,30,{229,9}},{229,0.5},{162,30,{229,9}}}}}},{39,{{6,{10,180},{58,40}}},{{94,191,{58,181},{234,{10,153},{{6,{10,57},{58,60}}}}}}}}}},false}}}}}},{155,189,{146,{84},0,{{198,{{{94,65,{162,48,{77,{10,84},190,{{58,191}}}},{6,{10,84},{58,87}}},{{122,{{37}}}}}},false},{95,{192},{{6,{10,7},{58,193}}}},{198,{{{10,192},{{198,{{{77,{10,84},194,{{10,192}}},{{122,{{37}}}}}},false}}}},false},{95,{195},{{77,{10,84},196,{{58,197}}}}},{198,{{{10,195},{{198,{{{77,{10,1},198,{{10,195}}},{{122,{{37}}}}}},false}}}},false},{122,{{246}}}}}},{95,{199},{{86,{}}}},{155,200,{146,{84},0,{{198,{{{6,{10,199},{10,84}},{{122,{}}}}},false},{39,{{6,{10,199},{10,84}}},{{246}}},{161,{77,{6,{10,84},{58,201}},83,{{146,{202},0,{{198,{{{94,65,{162,48,{6,{10,57},{58,58}}},{94,211,{6,{10,57},{58,69}},{58,114}}},{{122,{}}}}},false},{95,{192},{{6,{10,202},{58,19}}}},{95,{203},{{77,{10,192},204,{{58,205}}}}},{198,{{{10,203},{{95,{206},{{77,{10,192},207,{{58,208}}}}},{198,{{{94,150,{10,206},{94,211,{10,206},{23,{94,150,{6,{10,7},{58,193}},{77,{6,{10,7},{58,193}},207,{{58,208}}}}}}},{{161,{234,{10,77},{{146,{},0,{{39,{{6,{10,206},{58,88}}},{{234,{6,{10,89},{58,15}},{{234,{6,{10,157},{58,118}},{{162,30,{229,150}},{229,150}}},{229,300},{234,{6,{10,157},{58,118}},{{162,30,{229,150}},{229,150}}}}}}}}}}}}}}},false}}}},false}}}}}}}}},{155,209,{146,{84},0,{{198,{{{234,{10,189},{{10,84}}},{{39,{{6,{10,81},{10,84}}},{{246}}},{161,{234,{10,200},{{10,84}}}}}}},false},{161,{77,{6,{10,84},{58,210}},83,{{146,{211},0,{{198,{{{94,65,{94,181,{10,211},{58,87}},{94,181,{10,211},{58,19}}},{{198,{{{234,{10,189},{{10,84}}},{{39,{{6,{10,81},{10,84}}},{{246}}},{161,{234,{10,200},{{10,84}}}}}}},{{39,{{6,{10,81},{10,84}}},{{139}}}}}}}},false}}}}}}}}},{161,{234,{6,{10,212},{58,213}},{{146,{},0,{{132,{85,84},{{234,{10,86},{{77,{10,11},214,{}}}}},{{161,{234,{10,209},{{10,84}}}}}}}}}}},{161,{77,{6,{10,11},{58,215}},83,{{10,209}}}},{161,{77,{6,{10,11},{58,216}},83,{{146,{84},0,{{39,{{6,{10,81},{10,84}}},{{139}}}}}}}},{155,217,{146,{218,219,220,84,221},0,{{95,{222},{}},{95,{223},{{94,65,{94,150,{6,{10,57},{58,66}},{229,5}},{229,1}}}},{95,{224},{{94,99,{6,{10,57},{58,61}},{10,223}}}},{198,{{{94,181,{6,{10,57},{58,69}},{58,116}},{{95,{225},{{234,{6,{10,157},{58,226}},{{94,75,{6,{10,218},{58,227}},{6,{10,219},{58,227}}},{94,75,{6,{10,218},{58,53}},{6,{10,219},{58,53}}}}}}},{39,{{10,222}},{{234,{6,{10,89},{58,15}},{{94,80,{6,{10,219},{58,53}},{94,99,{234,{6,{10,157},{58,228}},{{10,225}}},{6,{10,57},{58,59}}}},{94,80,{6,{10,219},{58,229}},{6,{10,57},{58,60}}},{94,80,{6,{10,219},{58,227}},{94,99,{234,{6,{10,157},{58,230}},{{10,225}}},{6,{10,57},{58,59}}}}}}}}}},{{94,181,{6,{10,57},{58,69}},{58,112}},{{198,{{{94,150,{10,84},{6,{10,84},{58,19}}},{{39,{{10,222}},{{6,{10,84},{58,26}}}}}}},{{39,{{10,222}},{{10,219}}}}}}},{{94,181,{6,{10,57},{58,69}},{58,114}},{{95,{231},{{234,{6,{10,157},{58,232}},{{94,99,{10,224},{229,2}}}}}},{95,{233},{{94,80,{23,{94,99,{10,221},{229,0.5}}},{23,{94,99,{10,220},{229,5}}}}}},{95,{234},{{234,{6,{10,157},{58,158}},{{94,99,{23,{94,75,{6,{10,218},{58,229}},{6,{10,219},{58,229}}}},{229,0.3}},{229,5},{6,{10,57},{58,59}}}}}},{39,{{10,222}},{{234,{6,{10,89},{58,15}},{{94,80,{6,{10,219},{58,53}},{94,99,{234,{6,{10,157},{58,228}},{{10,233}}},{10,234}}},{94,80,{94,80,{6,{10,219},{58,229}},{6,{10,57},{58,60}}},{23,{94,113,{23,{94,99,{10,221},{229,2}}},{229,40}}}},{94,80,{6,{10,219},{58,227}},{94,99,{234,{6,{10,157},{58,230}},{{10,233}}},{10,234}}}}}}}}}},{{95,{231},{{234,{6,{10,157},{58,232}},{{10,224}}}}},{95,{225},{{234,{6,{10,157},{58,226}},{{94,75,{6,{10,218},{58,227}},{6,{10,219},{58,227}}},{94,75,{6,{10,218},{58,53}},{6,{10,219},{58,53}}}}}}},{95,{235},{{94,80,{10,225},{10,231}}}},{198,{{{94,181,{6,{10,57},{58,69}},{58,70}},{{39,{{10,222}},{{234,{6,{10,89},{58,15}},{{94,80,{6,{10,219},{58,53}},{94,99,{234,{6,{10,157},{58,228}},{{10,235}}},{6,{10,57},{58,59}}}},{94,80,{6,{10,219},{58,229}},{6,{10,57},{58,60}}},{94,80,{6,{10,219},{58,227}},{94,99,{234,{6,{10,157},{58,230}},{{10,235}}},{6,{10,57},{58,59}}}}}}}}}},{{94,181,{6,{10,57},{58,69}},{58,94}},{{39,{{10,222}},{{234,{6,{10,89},{58,15}},{{94,80,{6,{10,219},{58,53}},{94,99,{234,{6,{10,157},{58,228}},{{10,235}}},{6,{10,57},{58,59}}}},{94,80,{6,{10,219},{58,229}},{6,{10,57},{58,60}}},{94,80,{6,{10,219},{58,227}},{94,99,{94,99,{234,{6,{10,157},{58,230}},{{10,235}}},{6,{10,57},{58,59}}},{6,{10,57},{58,72}}}}}}}}}},{{94,181,{6,{10,57},{58,69}},{58,96}},{{39,{{10,222}},{{234,{6,{10,89},{58,15}},{{94,80,{6,{10,219},{58,53}},{94,99,{234,{6,{10,157},{58,230}},{{10,235}}},{6,{10,57},{58,59}}}},{94,80,{6,{10,219},{58,229}},{6,{10,57},{58,60}}},{94,80,{6,{10,219},{58,227}},{94,99,{94,99,{234,{6,{10,157},{58,230}},{{94,99,{10,235},{229,2}}}},{6,{10,57},{58,59}}},{6,{10,57},{58,73}}}}}}}}}},{{94,181,{6,{10,57},{58,69}},{58,98}},{{95,{236},{{94,80,{6,{10,57},{58,59}},{94,99,{23,{94,113,{10,220},{229,10}}},{6,{10,57},{58,71}}}}}},{39,{{10,222}},{{234,{6,{10,89},{58,15}},{{94,80,{6,{10,219},{58,53}},{94,99,{234,{6,{10,157},{58,228}},{{10,235}}},{10,236}}},{94,80,{6,{10,219},{58,229}},{6,{10,57},{58,60}}},{94,80,{6,{10,219},{58,227}},{94,99,{234,{6,{10,157},{58,230}},{{10,235}}},{10,236}}}}}}}}},{{94,181,{6,{10,57},{58,69}},{58,100}},{{95,{237},{{94,80,{6,{10,57},{58,60}},{94,99,{234,{6,{10,157},{58,230}},{{94,99,{10,235},{229,2}}}},{229,20}}}}},{39,{{10,222}},{{234,{6,{10,89},{58,15}},{{94,80,{6,{10,219},{58,53}},{94,99,{234,{6,{10,157},{58,228}},{{10,235}}},{6,{10,57},{58,59}}}},{94,80,{6,{10,219},{58,229}},{10,237}},{94,80,{6,{10,219},{58,227}},{94,99,{234,{6,{10,157},{58,230}},{{10,235}}},{6,{10,57},{58,59}}}}}}}}}},{{94,181,{6,{10,57},{58,69}},{58,110}},{{95,{238},{{6,{23,{94,75,{234,{6,{10,89},{58,15}},{{6,{10,218},{58,53}},{6,{10,219},{58,229}},{6,{10,218},{58,227}}}},{10,219}}},{58,239}}}},{95,{240},{{234,{6,{10,157},{58,241}},{{229,5},{23,{94,99,{10,238},{229,0.95}}}}}}},{39,{{10,222}},{{234,{6,{10,89},{58,15}},{{94,80,{6,{10,219},{58,53}},{94,99,{234,{6,{10,157},{58,228}},{{10,235}}},{10,240}}},{94,80,{94,80,{6,{10,219},{58,229}},{6,{10,57},{58,60}}},{94,99,{234,{6,{10,157},{58,230}},{{94,99,{10,220},{229,5}}}},{229,5}}},{94,80,{6,{10,219},{58,227}},{94,99,{234,{6,{10,157},{58,230}},{{10,235}}},{10,240}}}}}}}}}},{{39,{{10,222}},{{234,{6,{10,89},{58,15}},{{94,80,{6,{10,219},{58,53}},{94,99,{234,{6,{10,157},{58,228}},{{10,235}}},{6,{10,57},{58,59}}}},{94,80,{6,{10,219},{58,229}},{6,{10,57},{58,60}}},{94,80,{6,{10,219},{58,227}},{94,99,{234,{6,{10,157},{58,230}},{{10,235}}},{6,{10,57},{58,59}}}}}}}}}}}},{122,{{10,222}}}}}},{161,{77,{6,{10,4},{58,242}},83,{{146,{243},0,{{198,{{{162,48,{6,{10,57},{58,58}}},{{122,{}}}}},false},{161,{234,{10,77},{{146,{},0,{{161,{234,{10,244},{{10,7},{58,245},{6,{10,157},{58,246}}}}}}}}}},{95,{219},{}},{198,{{{6,{10,57},{58,65}},{{95,{247},{{77,{10,5},173,{}}}},{95,{248},{{77,{10,10},249,{{6,{10,247},{58,53}},{6,{10,247},{58,229}}}}}},{95,{250},{{234,{6,{10,251},{58,15}},{}}}},{39,{{6,{10,250},{58,252}}},{{6,{6,{10,44},{58,253}},{58,254}}}},{198,{{{6,{10,7},{58,193}},{{39,{{6,{10,250},{58,255}}},{{86,{{118,{6,{10,7},{58,193}}}}}}}}}},false},{95,{256},{{77,{10,11},257,{{6,{10,248},{58,258}},{94,99,{6,{10,248},{58,259}},{229,1000}},{10,250}}}}},{198,{{{10,256},{{39,{{10,219}},{{6,{10,256},{58,26}}}}}}},{{39,{{10,219}},{{94,80,{6,{10,248},{58,258}},{23,{94,99,{6,{10,248},{58,259}},{229,150}}}}}}}}}}},{{95,{67},{{94,65,{6,{10,57},{58,67}},{10,7}}}},{198,{{{94,150,{6,{10,67},{58,193}},{77,{6,{10,67},{58,193}},207,{{58,208}}}},{{39,{{10,219}},{{6,{6,{6,{10,67},{58,193}},{58,208}},{58,26}}}}}}},{{95,{260},{{94,150,{6,{10,7},{58,193}},{77,{6,{10,7},{58,193}},207,{{58,208}}}}}},{198,{{{10,260},{{39,{{10,219}},{{6,{10,260},{58,26}}}}}}},{{122,{}}}}}}}},{95,{261},{{234,{10,262},{}}}},{95,{221},{{229,0}}},{132,{84,85},{{234,{10,86},{{10,81}}}},{{198,{{{94,150,{94,150,{10,84},{6,{10,84},{58,19}}},{162,48,{6,{10,84},{58,87}}}},{{39,{{10,221}},{{94,80,{10,221},{229,1}}}},{95,{263},{{6,{23,{94,75,{6,{10,84},{58,26}},{10,219}}},{58,239}}}},{198,{{{94,183,{10,263},{229,500}},{{161,{234,{10,77},{{146,{},0,{{39,{{6,{10,84},{58,264}}},{{234,{6,{10,265},{58,15}},{{229,0},{229,0},{229,0},{229,0},{229,0}}}}}}}}}},{95,{222},{{234,{10,217},{{6,{10,84},{58,26}},{10,219},{10,261},{10,84},{10,221}}}}},{95,{266},{{23,{94,75,{10,222},{6,{10,84},{58,26}}}}}},{95,{267},{{94,99,{10,266},{229,16}}}},{39,{{6,{10,84},{58,88}}},{{234,{6,{10,89},{58,15}},{{234,{6,{10,157},{58,158}},{{6,{10,267},{58,53}},{162,30,{229,160}},{229,160}}},{234,{6,{10,157},{58,158}},{{6,{10,267},{58,229}},{162,30,{229,160}},{229,160}}},{234,{6,{10,157},{58,158}},{{6,{10,267},{58,227}},{162,30,{229,160}},{229,160}}}}}}}}}},false}}}},{{39,{{6,{10,81},{10,84}}},{{139}}}}}}}}}}}},{95,{268,269,270},{}},{161,{77,{6,{10,22},{58,164}},83,{{146,{165},0,{{198,{{{94,65,{94,181,{6,{10,165},{58,166}},{6,{6,{10,44},{58,166}},{58,167}}},{94,181,{6,{10,165},{58,166}},{6,{6,{10,44},{58,166}},{58,168}}}},{{39,{{10,268}},{{246}}},{39,{{10,269}},{{6,{10,165},{58,26}}}},{39,{{10,270}},{{6,{10,22},{58,26}}}}}}},false}}}}}},{161,{77,{6,{10,5},{58,170}},83,{{146,{165},0,{{198,{{{94,150,{10,268},{23,{94,65,{94,181,{6,{10,165},{58,166}},{6,{6,{10,44},{58,166}},{58,171}}},{94,181,{6,{10,165},{58,166}},{6,{6,{10,44},{58,166}},{58,168}}}}}},{{95,{271},{{94,75,{6,{10,165},{58,26}},{10,269}}}},{39,{{6,{10,22},{58,26}}},{{234,{6,{10,25},{58,15}},{{6,{6,{10,270},{58,53}},{58,272}},{94,80,{6,{6,{10,270},{58,53}},{58,273}},{6,{10,271},{58,53}}},{6,{6,{10,270},{58,229}},{58,272}},{94,80,{6,{6,{10,270},{58,229}},{58,273}},{6,{10,271},{58,229}}}}}}}}}},false}}}}}},{161,{77,{6,{10,5},{58,169}},83,{{146,{165},0,{{198,{{{94,65,{94,181,{6,{10,165},{58,166}},{6,{6,{10,44},{58,166}},{58,167}}},{94,181,{6,{10,165},{58,166}},{6,{6,{10,44},{58,166}},{58,168}}}},{{39,{{10,268}},{{37}}}}}},false}}}}}},{95,{274},{{37}}},{161,{77,{6,{10,48},{58,82}},83,{{146,{},0,{{39,{{10,274}},{{162,48,{10,274}}}},{198,{{{10,274},{{161,{77,{10,22},275,{{234,{6,{10,25},{58,15}},{{229,0},{229,290},{229,0},{229,36}}},{58,276},{58,277},{229,0.3},{246}}}},{39,{{6,{10,48},{58,40}}},{{58,278}}},{39,{{6,{10,55},{58,142}}},{{37}}}}}},{{161,{77,{10,22},275,{{234,{6,{10,25},{58,15}},{{229,0},{229,290},{229,0},{229,460}}},{58,276},{58,277},{229,0.3},{246}}}},{39,{{6,{10,48},{58,40}}},{{58,50}}},{39,{{6,{10,55},{58,142}}},{{246}}}}}}}}}}}, _wabe_dumoaePV)
-    if _vesh_amziN7gw == _qeth_wabesE9y then
-        return table.unpack(_dyl_xethZwE5, 1, _dyl_xethZwE5.n)
-    end
-end
-
-return _mira_shuu4GKB(...)
-
+end)
